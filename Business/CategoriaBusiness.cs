@@ -7,7 +7,7 @@ using Dominio;
 
 namespace Business
 {
-    internal class CategoriaBusiness
+    public class CategoriaBusiness
     {
     }
 }
