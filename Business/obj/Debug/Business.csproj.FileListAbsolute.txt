@@ -1,0 +1,9 @@
+C:\Users\genis\OneDrive\Escritorio\Programacio\RepoGitHub\TPFinal Nivel2\TPFinalNivel2_Muner\Business\bin\Debug\Business.dll
+C:\Users\genis\OneDrive\Escritorio\Programacio\RepoGitHub\TPFinal Nivel2\TPFinalNivel2_Muner\Business\bin\Debug\Business.pdb
+C:\Users\genis\OneDrive\Escritorio\Programacio\RepoGitHub\TPFinal Nivel2\TPFinalNivel2_Muner\Business\bin\Debug\Dominio.dll
+C:\Users\genis\OneDrive\Escritorio\Programacio\RepoGitHub\TPFinal Nivel2\TPFinalNivel2_Muner\Business\bin\Debug\Dominio.pdb
+C:\Users\genis\OneDrive\Escritorio\Programacio\RepoGitHub\TPFinal Nivel2\TPFinalNivel2_Muner\Business\obj\Debug\Business.csproj.AssemblyReference.cache
+C:\Users\genis\OneDrive\Escritorio\Programacio\RepoGitHub\TPFinal Nivel2\TPFinalNivel2_Muner\Business\obj\Debug\Business.csproj.CoreCompileInputs.cache
+C:\Users\genis\OneDrive\Escritorio\Programacio\RepoGitHub\TPFinal Nivel2\TPFinalNivel2_Muner\Business\obj\Debug\Business.csproj.CopyComplete
+C:\Users\genis\OneDrive\Escritorio\Programacio\RepoGitHub\TPFinal Nivel2\TPFinalNivel2_Muner\Business\obj\Debug\Business.dll
+C:\Users\genis\OneDrive\Escritorio\Programacio\RepoGitHub\TPFinal Nivel2\TPFinalNivel2_Muner\Business\obj\Debug\Business.pdb

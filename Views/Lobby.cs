@@ -16,5 +16,18 @@ namespace Views
         {
             InitializeComponent();
         }
+
+        private void BtnCerrar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void BtnAcceder_Click(object sender, EventArgs e)
+        {
+            Articulos FrmArticulos = new Articulos();
+            FrmArticulos.RefToLobby = this;
+            FrmArticulos.Show();
+            this.Hide();
+        }
     }
 }

@@ -17,5 +17,12 @@ namespace Views
         {
             InitializeComponent();
         }
+
+        public Form RefToLobby { get; set; }
+
+        private void Articulos_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            RefToLobby.Show();
+        }
     }
 }

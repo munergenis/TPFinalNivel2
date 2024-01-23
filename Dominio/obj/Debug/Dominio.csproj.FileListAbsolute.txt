@@ -1,0 +1,6 @@
+C:\Users\genis\OneDrive\Escritorio\Programacio\RepoGitHub\TPFinal Nivel2\TPFinalNivel2_Muner\Dominio\bin\Debug\Dominio.dll
+C:\Users\genis\OneDrive\Escritorio\Programacio\RepoGitHub\TPFinal Nivel2\TPFinalNivel2_Muner\Dominio\bin\Debug\Dominio.pdb
+C:\Users\genis\OneDrive\Escritorio\Programacio\RepoGitHub\TPFinal Nivel2\TPFinalNivel2_Muner\Dominio\obj\Debug\Dominio.csproj.AssemblyReference.cache
+C:\Users\genis\OneDrive\Escritorio\Programacio\RepoGitHub\TPFinal Nivel2\TPFinalNivel2_Muner\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\genis\OneDrive\Escritorio\Programacio\RepoGitHub\TPFinal Nivel2\TPFinalNivel2_Muner\Dominio\obj\Debug\Dominio.dll
+C:\Users\genis\OneDrive\Escritorio\Programacio\RepoGitHub\TPFinal Nivel2\TPFinalNivel2_Muner\Dominio\obj\Debug\Dominio.pdb
