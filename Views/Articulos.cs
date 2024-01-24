@@ -14,18 +14,23 @@ namespace Views
 {
     public partial class Articulos : Form
     {
+        // Constructor
         public Articulos()
         {
             InitializeComponent();
         }
 
+        // Atributos y Properties
         public Form RefToLobby { get; set; }
         private bool dragging = false;
         private Point dragCursorPoint;
         private Point dragFormPoint;
 
+        // Objetos
+        List<Articulo> lista = null;
         ArticuloBusiness articuloBusiness = new ArticuloBusiness();
 
+        // Eventos
         private void Articulos_FormClosed(object sender, FormClosedEventArgs e)
         {
             RefToLobby.Show();
@@ -74,11 +79,20 @@ namespace Views
         private void Articulos_Load(object sender, EventArgs e)
         {
             ListarArticulos();
+            CargarLabels();
         }
 
+        private void DgvArticulos_SelectionChanged(object sender, EventArgs e)
+        {
+            Articulo seleccionado = (Articulo)DgvArticulos.CurrentRow.DataBoundItem;
+            CargarImagen(seleccionado.ImagenUrl);
+            CargarLabels(seleccionado);
+        }
+
+        // Métodos
         private void ListarArticulos()
         {
-            List<Articulo> lista = articuloBusiness.ListarArticulos();
+            lista = articuloBusiness.ListarArticulos();
             DgvArticulos.DataSource = lista;
             OcultarColumna("Id");
             OcultarColumna("Descripcion");
@@ -103,10 +117,21 @@ namespace Views
             }
         }
 
-        private void DgvArticulos_SelectionChanged(object sender, EventArgs e)
+        private void CargarLabels(Articulo articulo)
         {
-            Articulo seleccionado = (Articulo)DgvArticulos.CurrentRow.DataBoundItem;
-            CargarImagen(seleccionado.ImagenUrl);
+
+            LblCategoria.Text = articulo.Categoria.Descripcion.ToUpper();
+            LblMarca.Text = articulo.Marca.Descripcion;
+            LblNombre.Text = articulo.Nombre;
+            LblDescripcion.Text = articulo.Descripcion;
+        }
+
+        private void CargarLabels()
+        {
+            LblCategoria.Text = lista[0].Categoria.Descripcion.ToUpper();
+            LblMarca.Text = lista[0].Marca.Descripcion;
+            LblNombre.Text = lista[0].Nombre;
+            LblDescripcion.Text = lista[0].Descripcion;
         }
     }
 }
