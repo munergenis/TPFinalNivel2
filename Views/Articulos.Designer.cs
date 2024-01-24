@@ -122,7 +122,7 @@
             this.GrbPanel.MaximumSize = new System.Drawing.Size(941, 655);
             this.GrbPanel.MinimumSize = new System.Drawing.Size(266, 655);
             this.GrbPanel.Name = "GrbPanel";
-            this.GrbPanel.Size = new System.Drawing.Size(266, 655);
+            this.GrbPanel.Size = new System.Drawing.Size(941, 655);
             this.GrbPanel.TabIndex = 2;
             this.GrbPanel.TabStop = false;
             // 
@@ -229,6 +229,7 @@
             // 
             // CbxMarca
             // 
+            this.CbxMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CbxMarca.FormattingEnabled = true;
             this.CbxMarca.Location = new System.Drawing.Point(90, -1);
             this.CbxMarca.Name = "CbxMarca";
@@ -259,6 +260,7 @@
             // CbxCategoria
             // 
             this.CbxCategoria.BackColor = System.Drawing.SystemColors.Window;
+            this.CbxCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CbxCategoria.FormattingEnabled = true;
             this.CbxCategoria.Location = new System.Drawing.Point(90, -1);
             this.CbxCategoria.Name = "CbxCategoria";

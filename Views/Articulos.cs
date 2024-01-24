@@ -87,6 +87,7 @@ namespace Views
             CargarLabels();
             EsconderBusquedaAvanzada();
             seleccionado = (Articulo)DgvArticulos.Rows[0].DataBoundItem;
+            CargarCbx();
         }
 
         private void DgvArticulos_SelectionChanged(object sender, EventArgs e)
@@ -122,11 +123,9 @@ namespace Views
                 BtnModificar.Width -= 9;
                 BtnModificar.Text = string.Empty;
                 BtnModificar.Enabled = false;
-                //BtnModificar.ForeColor = System.Drawing.Color.Khaki;
                 BtnEliminar.Width -= 9;
                 BtnEliminar.Text = string.Empty;
                 BtnEliminar.Enabled = false;
-                //BtnEliminar.ForeColor = System.Drawing.Color.Salmon;
                 LblCategoria.Visible = false;
                 LblMarca.Visible = false;
                 LblNombre.Visible = false;
@@ -150,8 +149,6 @@ namespace Views
                     BtnEliminar.Text = "Eliminar";
                     BtnModificar.Enabled = true;
                     BtnEliminar.Enabled = true;
-                    //BtnModificar.ForeColor = System.Drawing.SystemColors.ControlText;
-                    //BtnEliminar.ForeColor = System.Drawing.SystemColors.ControlText;
                     LblCategoria.Visible = true;
                     LblMarca.Visible = true;
                     LblNombre.Visible = true;
@@ -164,6 +161,9 @@ namespace Views
         {
             timer1.Start();
             CargarImagen(string.Empty);
+            CargarTextBox();
+            CbxCategoria.SelectedIndex = -1;
+            CbxMarca.SelectedIndex = -1;
         }
 
         private void BtnModificar_Click(object sender, EventArgs e)
@@ -171,7 +171,9 @@ namespace Views
             if (DgvArticulos.Rows.Count > 0)
             {
                 timer1.Start();
-                CargarModificar(seleccionado); 
+                CargarTextBox(seleccionado);
+                CbxCategoria.SelectedValue = seleccionado.Categoria.Id;
+                CbxMarca.SelectedValue = seleccionado.Marca.Id;
             }
         }
 
@@ -245,13 +247,34 @@ namespace Views
             CargarImagen(TxtUrlImagen.Text);
         }
 
-        private void CargarModificar(Articulo seleccionado)
+        private void CargarTextBox(Articulo seleccionado)
         {
             TxtCodigo.Text = seleccionado.Codigo;
             TxtNombre.Text = seleccionado.Nombre;
             TxtPrecio.Text = seleccionado.Precio.ToString();
             TxtUrlImagen.Text = seleccionado.ImagenUrl;
             TxtDescripcion.Text = seleccionado.Descripcion;
+        }
+
+        private void CargarTextBox()
+        {
+            TxtCodigo.Text = string.Empty;
+            TxtNombre.Text = string.Empty;
+            TxtPrecio.Text = string.Empty;
+            TxtUrlImagen.Text = string.Empty;
+            TxtDescripcion.Text = string.Empty;
+        }
+
+        private void CargarCbx()
+        {
+            CategoriaBusiness categoriaBusiness = new CategoriaBusiness();
+            MarcaBusiness marcaBusiness = new MarcaBusiness();
+            CbxCategoria.DataSource = categoriaBusiness.Listar();
+            CbxCategoria.ValueMember = "Id";
+            CbxCategoria.DisplayMember = "Descripcion";
+            CbxMarca.DataSource = marcaBusiness.Listar();
+            CbxMarca.ValueMember = "Id";
+            CbxMarca.DisplayMember = "Descripcion";
         }
     }
 }
