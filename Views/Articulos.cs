@@ -120,9 +120,13 @@ namespace Views
             {
                 GrbPanel.Width += 25;
                 BtnModificar.Width -= 9;
-                BtnModificar.ForeColor = System.Drawing.Color.Khaki;
+                BtnModificar.Text = string.Empty;
+                BtnModificar.Enabled = false;
+                //BtnModificar.ForeColor = System.Drawing.Color.Khaki;
                 BtnEliminar.Width -= 9;
-                BtnEliminar.ForeColor = System.Drawing.Color.Salmon;
+                BtnEliminar.Text = string.Empty;
+                BtnEliminar.Enabled = false;
+                //BtnEliminar.ForeColor = System.Drawing.Color.Salmon;
                 LblCategoria.Visible = false;
                 LblMarca.Visible = false;
                 LblNombre.Visible = false;
@@ -142,8 +146,12 @@ namespace Views
                 {
                     timer1.Stop();
                     expand = false;
-                    BtnModificar.ForeColor = System.Drawing.SystemColors.ControlText;
-                    BtnEliminar.ForeColor = System.Drawing.SystemColors.ControlText;
+                    BtnModificar.Text = "Modificar";
+                    BtnEliminar.Text = "Eliminar";
+                    BtnModificar.Enabled = true;
+                    BtnEliminar.Enabled = true;
+                    //BtnModificar.ForeColor = System.Drawing.SystemColors.ControlText;
+                    //BtnEliminar.ForeColor = System.Drawing.SystemColors.ControlText;
                     LblCategoria.Visible = true;
                     LblMarca.Visible = true;
                     LblNombre.Visible = true;
