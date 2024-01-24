@@ -25,6 +25,7 @@ namespace Views
         private bool dragging = false;
         private Point dragCursorPoint;
         private Point dragFormPoint;
+        private bool expand = false;
 
         // Objetos
         List<Articulo> lista = null;
@@ -80,6 +81,7 @@ namespace Views
         {
             ListarArticulos();
             CargarLabels();
+            EsconderBusquedaAvanzada();
         }
 
         private void DgvArticulos_SelectionChanged(object sender, EventArgs e)
@@ -87,6 +89,72 @@ namespace Views
             Articulo seleccionado = (Articulo)DgvArticulos.CurrentRow.DataBoundItem;
             CargarImagen(seleccionado.ImagenUrl);
             CargarLabels(seleccionado);
+        }
+
+        private void BtnToogleBusquedaAvanzada_Click(object sender, EventArgs e)
+        {
+            if (LblColumna.Visible == false)
+            {
+                LblColumna.Visible = true;
+                CbxColumnaBusquedaAvanzada.Visible = true;
+                LblCriterio.Visible = true;
+                CbxCriterioBusquedaAvanzada.Visible = true;
+                LblTexto.Visible = true;
+                TxtBusquedaAvanzada.Visible = true;
+                BtnBusquedaAvanzada.Visible=true;
+            }
+            else
+            {
+                EsconderBusquedaAvanzada();
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (expand == false)
+            {
+                GrbPanel.Width += 25;
+                BtnModificar.Width -= 9;
+                BtnModificar.ForeColor = System.Drawing.Color.Khaki;
+                BtnEliminar.Width -= 9;
+                BtnEliminar.ForeColor = System.Drawing.Color.Salmon;
+                LblCategoria.Visible = false;
+                LblMarca.Visible = false;
+                LblNombre.Visible = false;
+                LblDescripcion.Visible = false;
+                if (GrbPanel.Width >= 941)
+                {
+                    timer1.Stop();
+                    expand = true;
+                }
+            }
+            else
+            {
+                GrbPanel.Width -= 25;
+                BtnModificar.Width += 9;
+                BtnEliminar.Width += 9;
+                if (GrbPanel.Width <= 266)
+                {
+                    timer1.Stop();
+                    expand = false;
+                    BtnModificar.ForeColor = System.Drawing.SystemColors.ControlText;
+                    BtnEliminar.ForeColor = System.Drawing.SystemColors.ControlText;
+                    LblCategoria.Visible = true;
+                    LblMarca.Visible = true;
+                    LblNombre.Visible = true;
+                    LblDescripcion.Visible = true;
+                }
+            }
+        }
+
+        private void BtnAgregar_Click(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
+
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            timer1.Start();
         }
 
         // Métodos
@@ -113,10 +181,21 @@ namespace Views
             }
             catch (Exception)
             {
-                PbxArticulo.Image = Properties.Resources.placeholder;
+                PbxArticulo.Image = Properties.Resources.placeholder2;
             }
         }
 
+        private void EsconderBusquedaAvanzada()
+        {
+            LblColumna.Visible = false;
+            CbxColumnaBusquedaAvanzada.Visible = false;
+            LblCriterio.Visible = false;
+            CbxCriterioBusquedaAvanzada.Visible = false;
+            LblTexto.Visible = false;
+            TxtBusquedaAvanzada.Visible = false;
+            BtnBusquedaAvanzada.Visible = false;
+        }
+        
         private void CargarLabels(Articulo articulo)
         {
 
@@ -133,5 +212,6 @@ namespace Views
             LblNombre.Text = lista[0].Nombre;
             LblDescripcion.Text = lista[0].Descripcion;
         }
+
     }
 }
