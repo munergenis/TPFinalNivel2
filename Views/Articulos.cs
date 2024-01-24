@@ -30,6 +30,7 @@ namespace Views
         // Objetos
         List<Articulo> lista = null;
         ArticuloBusiness articuloBusiness = new ArticuloBusiness();
+        Articulo seleccionado = null;
 
         // Eventos
         private void Articulos_FormClosed(object sender, FormClosedEventArgs e)
@@ -85,11 +86,12 @@ namespace Views
             ListarArticulos();
             CargarLabels();
             EsconderBusquedaAvanzada();
+            seleccionado = (Articulo)DgvArticulos.Rows[0].DataBoundItem;
         }
 
         private void DgvArticulos_SelectionChanged(object sender, EventArgs e)
         {
-            Articulo seleccionado = (Articulo)DgvArticulos.CurrentRow.DataBoundItem;
+            seleccionado = (Articulo)DgvArticulos.CurrentRow.DataBoundItem;
             CargarImagen(seleccionado.ImagenUrl);
             CargarLabels(seleccionado);
         }
@@ -153,11 +155,23 @@ namespace Views
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
             timer1.Start();
+            CargarImagen(string.Empty);
         }
+
+        private void BtnModificar_Click(object sender, EventArgs e)
+        {
+            timer1.Start();
+            CargarModificar(seleccionado);
+        }
+
 
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
             timer1.Start();
+            DgvArticulos.Focus();
+            seleccionado = (Articulo)DgvArticulos.CurrentRow.DataBoundItem;
+            CargarImagen(seleccionado.ImagenUrl);
+            CargarLabels(seleccionado);
         }
 
         // Métodos
@@ -216,5 +230,18 @@ namespace Views
             LblDescripcion.Text = lista[0].Descripcion;
         }
 
+        private void TxtUrlImagen_TextChanged(object sender, EventArgs e)
+        {
+            CargarImagen(TxtUrlImagen.Text);
+        }
+
+        private void CargarModificar(Articulo seleccionado)
+        {
+            TxtCodigo.Text = seleccionado.Codigo;
+            TxtNombre.Text = seleccionado.Nombre;
+            TxtPrecio.Text = seleccionado.Precio.ToString();
+            TxtUrlImagen.Text = seleccionado.ImagenUrl;
+            TxtDescripcion.Text = seleccionado.Descripcion;
+        }
     }
 }
