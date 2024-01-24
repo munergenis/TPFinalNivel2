@@ -10,7 +10,7 @@ namespace Dominio
     {
         public int Id { get; set; }
 
-        public int Codigo { get; set; }
+        public string Codigo { get; set; }
 
         public string Nombre { get; set; }
 
@@ -22,6 +22,6 @@ namespace Dominio
 
         public string ImagenUrl { get; set; }
 
-        public float Precio { get; set; }
+        public decimal Precio { get; set; }
     }
 }
