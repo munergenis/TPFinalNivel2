@@ -35,7 +35,7 @@ namespace Views
         // Eventos
         private void Articulos_FormClosed(object sender, FormClosedEventArgs e)
         {
-            RefToLobby.Show();
+            RefToLobby.Close();
         }
 
         private void BtnClose_Click(object sender, EventArgs e)
@@ -160,10 +160,12 @@ namespace Views
 
         private void BtnModificar_Click(object sender, EventArgs e)
         {
-            timer1.Start();
-            CargarModificar(seleccionado);
+            if (DgvArticulos.Rows.Count > 0)
+            {
+                timer1.Start();
+                CargarModificar(seleccionado); 
+            }
         }
-
 
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
