@@ -29,9 +29,32 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GrbPanel = new System.Windows.Forms.GroupBox();
+            this.BtnCancelar = new System.Windows.Forms.Button();
+            this.BtnAceptar = new System.Windows.Forms.Button();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.TxtDescripcion = new System.Windows.Forms.TextBox();
+            this.LblEditDescripcion = new System.Windows.Forms.Label();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.TxtUrlImagen = new System.Windows.Forms.TextBox();
+            this.LblEditUrlImagen = new System.Windows.Forms.Label();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.CbxMarca = new System.Windows.Forms.ComboBox();
+            this.LblEditMarca = new System.Windows.Forms.Label();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.CbxCategoria = new System.Windows.Forms.ComboBox();
+            this.LblEditCategoria = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.TxtPrecio = new System.Windows.Forms.TextBox();
+            this.LblEditPrecio = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.TxtNombre = new System.Windows.Forms.TextBox();
+            this.LblEditNombre = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.TxtCodigo = new System.Windows.Forms.TextBox();
+            this.LblEditCodigo = new System.Windows.Forms.Label();
             this.BtnEliminar = new System.Windows.Forms.Button();
             this.BtnModificar = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -41,6 +64,7 @@
             this.LblMarca = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.LblCategoria = new System.Windows.Forms.Label();
+            this.PbxArticulo = new System.Windows.Forms.PictureBox();
             this.LblArticulos = new System.Windows.Forms.Label();
             this.DgvArticulos = new System.Windows.Forms.DataGridView();
             this.TxtFiltroRapido = new System.Windows.Forms.TextBox();
@@ -48,56 +72,32 @@
             this.LblFiltroRapido = new System.Windows.Forms.Label();
             this.BtnToogleBusquedaAvanzada = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.CbxColumnaBusquedaAvanzada = new System.Windows.Forms.ComboBox();
-            this.CbxCriterioBusquedaAvanzada = new System.Windows.Forms.ComboBox();
-            this.TxtBusquedaAvanzada = new System.Windows.Forms.TextBox();
-            this.LblColumna = new System.Windows.Forms.Label();
-            this.LblCriterio = new System.Windows.Forms.Label();
             this.LblTexto = new System.Windows.Forms.Label();
+            this.LblCriterio = new System.Windows.Forms.Label();
+            this.LblColumna = new System.Windows.Forms.Label();
             this.BtnBusquedaAvanzada = new System.Windows.Forms.Button();
+            this.TxtBusquedaAvanzada = new System.Windows.Forms.TextBox();
+            this.CbxCriterioBusquedaAvanzada = new System.Windows.Forms.ComboBox();
+            this.CbxColumnaBusquedaAvanzada = new System.Windows.Forms.ComboBox();
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.BtnMinimizar = new System.Windows.Forms.Button();
-            this.PbxArticulo = new System.Windows.Forms.PictureBox();
             this.BtnClose = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.LblEditCodigo = new System.Windows.Forms.Label();
-            this.TxtCodigo = new System.Windows.Forms.TextBox();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.TxtNombre = new System.Windows.Forms.TextBox();
-            this.LblEditNombre = new System.Windows.Forms.Label();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.TxtPrecio = new System.Windows.Forms.TextBox();
-            this.LblEditPrecio = new System.Windows.Forms.Label();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.LblEditCategoria = new System.Windows.Forms.Label();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.LblEditMarca = new System.Windows.Forms.Label();
-            this.CbxCategoria = new System.Windows.Forms.ComboBox();
-            this.CbxMarca = new System.Windows.Forms.ComboBox();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.TxtUrlImagen = new System.Windows.Forms.TextBox();
-            this.LblEditUrlImagen = new System.Windows.Forms.Label();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.TxtDescripcion = new System.Windows.Forms.TextBox();
-            this.LblEditDescripcion = new System.Windows.Forms.Label();
-            this.BtnAceptar = new System.Windows.Forms.Button();
-            this.BtnCancelar = new System.Windows.Forms.Button();
             this.GrbPanel.SuspendLayout();
+            this.panel12.SuspendLayout();
+            this.panel11.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxArticulo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvArticulos)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PbxArticulo)).BeginInit();
-            this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.panel10.SuspendLayout();
-            this.panel11.SuspendLayout();
-            this.panel12.SuspendLayout();
             this.SuspendLayout();
             // 
             // GrbPanel
@@ -125,6 +125,245 @@
             this.GrbPanel.Size = new System.Drawing.Size(941, 655);
             this.GrbPanel.TabIndex = 2;
             this.GrbPanel.TabStop = false;
+            // 
+            // BtnCancelar
+            // 
+            this.BtnCancelar.BackColor = System.Drawing.Color.Salmon;
+            this.BtnCancelar.FlatAppearance.BorderSize = 0;
+            this.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCancelar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BtnCancelar.Location = new System.Drawing.Point(625, 526);
+            this.BtnCancelar.MaximumSize = new System.Drawing.Size(266, 53);
+            this.BtnCancelar.MinimumSize = new System.Drawing.Size(23, 53);
+            this.BtnCancelar.Name = "BtnCancelar";
+            this.BtnCancelar.Size = new System.Drawing.Size(266, 53);
+            this.BtnCancelar.TabIndex = 18;
+            this.BtnCancelar.Text = "Cancelar";
+            this.BtnCancelar.UseVisualStyleBackColor = false;
+            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
+            // 
+            // BtnAceptar
+            // 
+            this.BtnAceptar.BackColor = System.Drawing.Color.Khaki;
+            this.BtnAceptar.FlatAppearance.BorderSize = 0;
+            this.BtnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAceptar.Location = new System.Drawing.Point(297, 526);
+            this.BtnAceptar.MaximumSize = new System.Drawing.Size(266, 53);
+            this.BtnAceptar.MinimumSize = new System.Drawing.Size(23, 53);
+            this.BtnAceptar.Name = "BtnAceptar";
+            this.BtnAceptar.Size = new System.Drawing.Size(266, 53);
+            this.BtnAceptar.TabIndex = 17;
+            this.BtnAceptar.Text = "Aceptar";
+            this.BtnAceptar.UseVisualStyleBackColor = false;
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.Olive;
+            this.panel12.Controls.Add(this.TxtDescripcion);
+            this.panel12.Controls.Add(this.LblEditDescripcion);
+            this.panel12.Location = new System.Drawing.Point(296, 468);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(594, 23);
+            this.panel12.TabIndex = 16;
+            // 
+            // TxtDescripcion
+            // 
+            this.TxtDescripcion.BackColor = System.Drawing.Color.Bisque;
+            this.TxtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxtDescripcion.Location = new System.Drawing.Point(91, 0);
+            this.TxtDescripcion.Name = "TxtDescripcion";
+            this.TxtDescripcion.Size = new System.Drawing.Size(503, 23);
+            this.TxtDescripcion.TabIndex = 1;
+            // 
+            // LblEditDescripcion
+            // 
+            this.LblEditDescripcion.Dock = System.Windows.Forms.DockStyle.Left;
+            this.LblEditDescripcion.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.LblEditDescripcion.Location = new System.Drawing.Point(0, 0);
+            this.LblEditDescripcion.Name = "LblEditDescripcion";
+            this.LblEditDescripcion.Size = new System.Drawing.Size(85, 23);
+            this.LblEditDescripcion.TabIndex = 0;
+            this.LblEditDescripcion.Text = "Descripción";
+            this.LblEditDescripcion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.Olive;
+            this.panel11.Controls.Add(this.TxtUrlImagen);
+            this.panel11.Controls.Add(this.LblEditUrlImagen);
+            this.panel11.Location = new System.Drawing.Point(297, 407);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(593, 23);
+            this.panel11.TabIndex = 15;
+            // 
+            // TxtUrlImagen
+            // 
+            this.TxtUrlImagen.BackColor = System.Drawing.Color.Bisque;
+            this.TxtUrlImagen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxtUrlImagen.Location = new System.Drawing.Point(90, 0);
+            this.TxtUrlImagen.Name = "TxtUrlImagen";
+            this.TxtUrlImagen.Size = new System.Drawing.Size(503, 23);
+            this.TxtUrlImagen.TabIndex = 1;
+            // 
+            // LblEditUrlImagen
+            // 
+            this.LblEditUrlImagen.Dock = System.Windows.Forms.DockStyle.Left;
+            this.LblEditUrlImagen.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.LblEditUrlImagen.Location = new System.Drawing.Point(0, 0);
+            this.LblEditUrlImagen.Name = "LblEditUrlImagen";
+            this.LblEditUrlImagen.Size = new System.Drawing.Size(84, 23);
+            this.LblEditUrlImagen.TabIndex = 0;
+            this.LblEditUrlImagen.Text = "Url Imagen";
+            this.LblEditUrlImagen.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.Olive;
+            this.panel10.Controls.Add(this.CbxMarca);
+            this.panel10.Controls.Add(this.LblEditMarca);
+            this.panel10.Location = new System.Drawing.Point(297, 224);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(592, 23);
+            this.panel10.TabIndex = 15;
+            // 
+            // CbxMarca
+            // 
+            this.CbxMarca.FormattingEnabled = true;
+            this.CbxMarca.Location = new System.Drawing.Point(90, -1);
+            this.CbxMarca.Name = "CbxMarca";
+            this.CbxMarca.Size = new System.Drawing.Size(503, 26);
+            this.CbxMarca.TabIndex = 17;
+            // 
+            // LblEditMarca
+            // 
+            this.LblEditMarca.Dock = System.Windows.Forms.DockStyle.Left;
+            this.LblEditMarca.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.LblEditMarca.Location = new System.Drawing.Point(0, 0);
+            this.LblEditMarca.Name = "LblEditMarca";
+            this.LblEditMarca.Size = new System.Drawing.Size(71, 23);
+            this.LblEditMarca.TabIndex = 0;
+            this.LblEditMarca.Text = "Marca";
+            this.LblEditMarca.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.Olive;
+            this.panel9.Controls.Add(this.CbxCategoria);
+            this.panel9.Controls.Add(this.LblEditCategoria);
+            this.panel9.Location = new System.Drawing.Point(297, 285);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(592, 23);
+            this.panel9.TabIndex = 14;
+            // 
+            // CbxCategoria
+            // 
+            this.CbxCategoria.BackColor = System.Drawing.SystemColors.Window;
+            this.CbxCategoria.FormattingEnabled = true;
+            this.CbxCategoria.Location = new System.Drawing.Point(90, -1);
+            this.CbxCategoria.Name = "CbxCategoria";
+            this.CbxCategoria.Size = new System.Drawing.Size(503, 26);
+            this.CbxCategoria.TabIndex = 16;
+            // 
+            // LblEditCategoria
+            // 
+            this.LblEditCategoria.Dock = System.Windows.Forms.DockStyle.Left;
+            this.LblEditCategoria.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.LblEditCategoria.Location = new System.Drawing.Point(0, 0);
+            this.LblEditCategoria.Name = "LblEditCategoria";
+            this.LblEditCategoria.Size = new System.Drawing.Size(79, 23);
+            this.LblEditCategoria.TabIndex = 0;
+            this.LblEditCategoria.Text = "Categoría";
+            this.LblEditCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.Olive;
+            this.panel8.Controls.Add(this.TxtPrecio);
+            this.panel8.Controls.Add(this.LblEditPrecio);
+            this.panel8.Location = new System.Drawing.Point(297, 346);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(593, 23);
+            this.panel8.TabIndex = 14;
+            // 
+            // TxtPrecio
+            // 
+            this.TxtPrecio.BackColor = System.Drawing.Color.Bisque;
+            this.TxtPrecio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxtPrecio.Location = new System.Drawing.Point(90, 0);
+            this.TxtPrecio.Name = "TxtPrecio";
+            this.TxtPrecio.Size = new System.Drawing.Size(503, 23);
+            this.TxtPrecio.TabIndex = 1;
+            // 
+            // LblEditPrecio
+            // 
+            this.LblEditPrecio.Dock = System.Windows.Forms.DockStyle.Left;
+            this.LblEditPrecio.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.LblEditPrecio.Location = new System.Drawing.Point(0, 0);
+            this.LblEditPrecio.Name = "LblEditPrecio";
+            this.LblEditPrecio.Size = new System.Drawing.Size(71, 23);
+            this.LblEditPrecio.TabIndex = 0;
+            this.LblEditPrecio.Text = "Precio";
+            this.LblEditPrecio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.Olive;
+            this.panel7.Controls.Add(this.TxtNombre);
+            this.panel7.Controls.Add(this.LblEditNombre);
+            this.panel7.Location = new System.Drawing.Point(297, 163);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(593, 23);
+            this.panel7.TabIndex = 14;
+            // 
+            // TxtNombre
+            // 
+            this.TxtNombre.BackColor = System.Drawing.Color.Bisque;
+            this.TxtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxtNombre.Location = new System.Drawing.Point(90, 0);
+            this.TxtNombre.Name = "TxtNombre";
+            this.TxtNombre.Size = new System.Drawing.Size(503, 23);
+            this.TxtNombre.TabIndex = 1;
+            // 
+            // LblEditNombre
+            // 
+            this.LblEditNombre.Dock = System.Windows.Forms.DockStyle.Left;
+            this.LblEditNombre.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.LblEditNombre.Location = new System.Drawing.Point(0, 0);
+            this.LblEditNombre.Name = "LblEditNombre";
+            this.LblEditNombre.Size = new System.Drawing.Size(74, 23);
+            this.LblEditNombre.TabIndex = 0;
+            this.LblEditNombre.Text = "Nombre";
+            this.LblEditNombre.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.Olive;
+            this.panel6.Controls.Add(this.TxtCodigo);
+            this.panel6.Controls.Add(this.LblEditCodigo);
+            this.panel6.Location = new System.Drawing.Point(297, 102);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(593, 23);
+            this.panel6.TabIndex = 13;
+            // 
+            // TxtCodigo
+            // 
+            this.TxtCodigo.BackColor = System.Drawing.Color.Bisque;
+            this.TxtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxtCodigo.Location = new System.Drawing.Point(90, 0);
+            this.TxtCodigo.Name = "TxtCodigo";
+            this.TxtCodigo.Size = new System.Drawing.Size(503, 23);
+            this.TxtCodigo.TabIndex = 1;
+            // 
+            // LblEditCodigo
+            // 
+            this.LblEditCodigo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.LblEditCodigo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.LblEditCodigo.Location = new System.Drawing.Point(0, 0);
+            this.LblEditCodigo.Name = "LblEditCodigo";
+            this.LblEditCodigo.Size = new System.Drawing.Size(71, 23);
+            this.LblEditCodigo.TabIndex = 0;
+            this.LblEditCodigo.Text = "Código";
+            this.LblEditCodigo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // BtnEliminar
             // 
@@ -223,6 +462,15 @@
             this.LblCategoria.Text = "label1";
             this.LblCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // PbxArticulo
+            // 
+            this.PbxArticulo.Location = new System.Drawing.Point(34, 72);
+            this.PbxArticulo.Name = "PbxArticulo";
+            this.PbxArticulo.Size = new System.Drawing.Size(200, 200);
+            this.PbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PbxArticulo.TabIndex = 0;
+            this.PbxArticulo.TabStop = false;
+            // 
             // LblArticulos
             // 
             this.LblArticulos.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -247,23 +495,23 @@
             this.DgvArticulos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DgvArticulos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.DgvArticulos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Bisque;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Bisque;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.WindowFrame;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvArticulos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Bisque;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Bisque;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.WindowFrame;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvArticulos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.DgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Olive;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvArticulos.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Olive;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvArticulos.DefaultCellStyle = dataGridViewCellStyle8;
             this.DgvArticulos.EnableHeadersVisualStyles = false;
             this.DgvArticulos.GridColor = System.Drawing.Color.Salmon;
             this.DgvArticulos.Location = new System.Drawing.Point(292, 133);
@@ -339,39 +587,14 @@
             this.panel5.Size = new System.Drawing.Size(592, 69);
             this.panel5.TabIndex = 14;
             // 
-            // CbxColumnaBusquedaAvanzada
+            // LblTexto
             // 
-            this.CbxColumnaBusquedaAvanzada.FormattingEnabled = true;
-            this.CbxColumnaBusquedaAvanzada.Location = new System.Drawing.Point(64, 0);
-            this.CbxColumnaBusquedaAvanzada.Name = "CbxColumnaBusquedaAvanzada";
-            this.CbxColumnaBusquedaAvanzada.Size = new System.Drawing.Size(175, 26);
-            this.CbxColumnaBusquedaAvanzada.TabIndex = 0;
-            // 
-            // CbxCriterioBusquedaAvanzada
-            // 
-            this.CbxCriterioBusquedaAvanzada.FormattingEnabled = true;
-            this.CbxCriterioBusquedaAvanzada.Location = new System.Drawing.Point(64, 30);
-            this.CbxCriterioBusquedaAvanzada.Name = "CbxCriterioBusquedaAvanzada";
-            this.CbxCriterioBusquedaAvanzada.Size = new System.Drawing.Size(175, 26);
-            this.CbxCriterioBusquedaAvanzada.TabIndex = 1;
-            // 
-            // TxtBusquedaAvanzada
-            // 
-            this.TxtBusquedaAvanzada.BackColor = System.Drawing.Color.Ivory;
-            this.TxtBusquedaAvanzada.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TxtBusquedaAvanzada.Location = new System.Drawing.Point(326, 1);
-            this.TxtBusquedaAvanzada.Name = "TxtBusquedaAvanzada";
-            this.TxtBusquedaAvanzada.Size = new System.Drawing.Size(266, 23);
-            this.TxtBusquedaAvanzada.TabIndex = 2;
-            // 
-            // LblColumna
-            // 
-            this.LblColumna.Location = new System.Drawing.Point(0, 0);
-            this.LblColumna.Name = "LblColumna";
-            this.LblColumna.Size = new System.Drawing.Size(58, 27);
-            this.LblColumna.TabIndex = 16;
-            this.LblColumna.Text = "Columna";
-            this.LblColumna.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.LblTexto.Location = new System.Drawing.Point(277, -1);
+            this.LblTexto.Name = "LblTexto";
+            this.LblTexto.Size = new System.Drawing.Size(43, 27);
+            this.LblTexto.TabIndex = 18;
+            this.LblTexto.Text = "Texto";
+            this.LblTexto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // LblCriterio
             // 
@@ -382,14 +605,14 @@
             this.LblCriterio.Text = "Criterio";
             this.LblCriterio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // LblTexto
+            // LblColumna
             // 
-            this.LblTexto.Location = new System.Drawing.Point(277, -1);
-            this.LblTexto.Name = "LblTexto";
-            this.LblTexto.Size = new System.Drawing.Size(43, 27);
-            this.LblTexto.TabIndex = 18;
-            this.LblTexto.Text = "Texto";
-            this.LblTexto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.LblColumna.Location = new System.Drawing.Point(0, 0);
+            this.LblColumna.Name = "LblColumna";
+            this.LblColumna.Size = new System.Drawing.Size(58, 27);
+            this.LblColumna.TabIndex = 16;
+            this.LblColumna.Text = "Columna";
+            this.LblColumna.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // BtnBusquedaAvanzada
             // 
@@ -404,6 +627,31 @@
             this.BtnBusquedaAvanzada.Size = new System.Drawing.Size(23, 23);
             this.BtnBusquedaAvanzada.TabIndex = 15;
             this.BtnBusquedaAvanzada.UseVisualStyleBackColor = false;
+            // 
+            // TxtBusquedaAvanzada
+            // 
+            this.TxtBusquedaAvanzada.BackColor = System.Drawing.Color.Ivory;
+            this.TxtBusquedaAvanzada.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxtBusquedaAvanzada.Location = new System.Drawing.Point(326, 1);
+            this.TxtBusquedaAvanzada.Name = "TxtBusquedaAvanzada";
+            this.TxtBusquedaAvanzada.Size = new System.Drawing.Size(266, 23);
+            this.TxtBusquedaAvanzada.TabIndex = 2;
+            // 
+            // CbxCriterioBusquedaAvanzada
+            // 
+            this.CbxCriterioBusquedaAvanzada.FormattingEnabled = true;
+            this.CbxCriterioBusquedaAvanzada.Location = new System.Drawing.Point(64, 30);
+            this.CbxCriterioBusquedaAvanzada.Name = "CbxCriterioBusquedaAvanzada";
+            this.CbxCriterioBusquedaAvanzada.Size = new System.Drawing.Size(175, 26);
+            this.CbxCriterioBusquedaAvanzada.TabIndex = 1;
+            // 
+            // CbxColumnaBusquedaAvanzada
+            // 
+            this.CbxColumnaBusquedaAvanzada.FormattingEnabled = true;
+            this.CbxColumnaBusquedaAvanzada.Location = new System.Drawing.Point(64, 0);
+            this.CbxColumnaBusquedaAvanzada.Name = "CbxColumnaBusquedaAvanzada";
+            this.CbxColumnaBusquedaAvanzada.Size = new System.Drawing.Size(175, 26);
+            this.CbxColumnaBusquedaAvanzada.TabIndex = 0;
             // 
             // BtnAgregar
             // 
@@ -433,15 +681,6 @@
             this.BtnMinimizar.UseVisualStyleBackColor = true;
             this.BtnMinimizar.Click += new System.EventHandler(this.BtnMinimizar_Click);
             // 
-            // PbxArticulo
-            // 
-            this.PbxArticulo.Location = new System.Drawing.Point(34, 72);
-            this.PbxArticulo.Name = "PbxArticulo";
-            this.PbxArticulo.Size = new System.Drawing.Size(200, 200);
-            this.PbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PbxArticulo.TabIndex = 0;
-            this.PbxArticulo.TabStop = false;
-            // 
             // BtnClose
             // 
             this.BtnClose.FlatAppearance.BorderSize = 0;
@@ -459,245 +698,6 @@
             // 
             this.timer1.Interval = 1;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.Olive;
-            this.panel6.Controls.Add(this.TxtCodigo);
-            this.panel6.Controls.Add(this.LblEditCodigo);
-            this.panel6.Location = new System.Drawing.Point(297, 102);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(593, 23);
-            this.panel6.TabIndex = 13;
-            // 
-            // LblEditCodigo
-            // 
-            this.LblEditCodigo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.LblEditCodigo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LblEditCodigo.Location = new System.Drawing.Point(0, 0);
-            this.LblEditCodigo.Name = "LblEditCodigo";
-            this.LblEditCodigo.Size = new System.Drawing.Size(71, 23);
-            this.LblEditCodigo.TabIndex = 0;
-            this.LblEditCodigo.Text = "Código";
-            this.LblEditCodigo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // TxtCodigo
-            // 
-            this.TxtCodigo.BackColor = System.Drawing.Color.Bisque;
-            this.TxtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TxtCodigo.Location = new System.Drawing.Point(90, 0);
-            this.TxtCodigo.Name = "TxtCodigo";
-            this.TxtCodigo.Size = new System.Drawing.Size(503, 23);
-            this.TxtCodigo.TabIndex = 1;
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.Olive;
-            this.panel7.Controls.Add(this.TxtNombre);
-            this.panel7.Controls.Add(this.LblEditNombre);
-            this.panel7.Location = new System.Drawing.Point(297, 163);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(593, 23);
-            this.panel7.TabIndex = 14;
-            // 
-            // TxtNombre
-            // 
-            this.TxtNombre.BackColor = System.Drawing.Color.Bisque;
-            this.TxtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TxtNombre.Location = new System.Drawing.Point(90, 0);
-            this.TxtNombre.Name = "TxtNombre";
-            this.TxtNombre.Size = new System.Drawing.Size(503, 23);
-            this.TxtNombre.TabIndex = 1;
-            // 
-            // LblEditNombre
-            // 
-            this.LblEditNombre.Dock = System.Windows.Forms.DockStyle.Left;
-            this.LblEditNombre.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LblEditNombre.Location = new System.Drawing.Point(0, 0);
-            this.LblEditNombre.Name = "LblEditNombre";
-            this.LblEditNombre.Size = new System.Drawing.Size(74, 23);
-            this.LblEditNombre.TabIndex = 0;
-            this.LblEditNombre.Text = "Nombre";
-            this.LblEditNombre.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.Olive;
-            this.panel8.Controls.Add(this.TxtPrecio);
-            this.panel8.Controls.Add(this.LblEditPrecio);
-            this.panel8.Location = new System.Drawing.Point(297, 346);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(593, 23);
-            this.panel8.TabIndex = 14;
-            // 
-            // TxtPrecio
-            // 
-            this.TxtPrecio.BackColor = System.Drawing.Color.Bisque;
-            this.TxtPrecio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TxtPrecio.Location = new System.Drawing.Point(90, 0);
-            this.TxtPrecio.Name = "TxtPrecio";
-            this.TxtPrecio.Size = new System.Drawing.Size(503, 23);
-            this.TxtPrecio.TabIndex = 1;
-            // 
-            // LblEditPrecio
-            // 
-            this.LblEditPrecio.Dock = System.Windows.Forms.DockStyle.Left;
-            this.LblEditPrecio.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LblEditPrecio.Location = new System.Drawing.Point(0, 0);
-            this.LblEditPrecio.Name = "LblEditPrecio";
-            this.LblEditPrecio.Size = new System.Drawing.Size(71, 23);
-            this.LblEditPrecio.TabIndex = 0;
-            this.LblEditPrecio.Text = "Precio";
-            this.LblEditPrecio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.Olive;
-            this.panel9.Controls.Add(this.CbxCategoria);
-            this.panel9.Controls.Add(this.LblEditCategoria);
-            this.panel9.Location = new System.Drawing.Point(297, 285);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(592, 23);
-            this.panel9.TabIndex = 14;
-            // 
-            // LblEditCategoria
-            // 
-            this.LblEditCategoria.Dock = System.Windows.Forms.DockStyle.Left;
-            this.LblEditCategoria.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LblEditCategoria.Location = new System.Drawing.Point(0, 0);
-            this.LblEditCategoria.Name = "LblEditCategoria";
-            this.LblEditCategoria.Size = new System.Drawing.Size(79, 23);
-            this.LblEditCategoria.TabIndex = 0;
-            this.LblEditCategoria.Text = "Categoría";
-            this.LblEditCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.Olive;
-            this.panel10.Controls.Add(this.CbxMarca);
-            this.panel10.Controls.Add(this.LblEditMarca);
-            this.panel10.Location = new System.Drawing.Point(297, 224);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(592, 23);
-            this.panel10.TabIndex = 15;
-            // 
-            // LblEditMarca
-            // 
-            this.LblEditMarca.Dock = System.Windows.Forms.DockStyle.Left;
-            this.LblEditMarca.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LblEditMarca.Location = new System.Drawing.Point(0, 0);
-            this.LblEditMarca.Name = "LblEditMarca";
-            this.LblEditMarca.Size = new System.Drawing.Size(71, 23);
-            this.LblEditMarca.TabIndex = 0;
-            this.LblEditMarca.Text = "Marca";
-            this.LblEditMarca.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // CbxCategoria
-            // 
-            this.CbxCategoria.BackColor = System.Drawing.SystemColors.Window;
-            this.CbxCategoria.FormattingEnabled = true;
-            this.CbxCategoria.Location = new System.Drawing.Point(90, -1);
-            this.CbxCategoria.Name = "CbxCategoria";
-            this.CbxCategoria.Size = new System.Drawing.Size(503, 26);
-            this.CbxCategoria.TabIndex = 16;
-            // 
-            // CbxMarca
-            // 
-            this.CbxMarca.FormattingEnabled = true;
-            this.CbxMarca.Location = new System.Drawing.Point(90, -1);
-            this.CbxMarca.Name = "CbxMarca";
-            this.CbxMarca.Size = new System.Drawing.Size(503, 26);
-            this.CbxMarca.TabIndex = 17;
-            // 
-            // panel11
-            // 
-            this.panel11.BackColor = System.Drawing.Color.Olive;
-            this.panel11.Controls.Add(this.TxtUrlImagen);
-            this.panel11.Controls.Add(this.LblEditUrlImagen);
-            this.panel11.Location = new System.Drawing.Point(297, 407);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(593, 23);
-            this.panel11.TabIndex = 15;
-            // 
-            // TxtUrlImagen
-            // 
-            this.TxtUrlImagen.BackColor = System.Drawing.Color.Bisque;
-            this.TxtUrlImagen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TxtUrlImagen.Location = new System.Drawing.Point(90, 0);
-            this.TxtUrlImagen.Name = "TxtUrlImagen";
-            this.TxtUrlImagen.Size = new System.Drawing.Size(503, 23);
-            this.TxtUrlImagen.TabIndex = 1;
-            // 
-            // LblEditUrlImagen
-            // 
-            this.LblEditUrlImagen.Dock = System.Windows.Forms.DockStyle.Left;
-            this.LblEditUrlImagen.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LblEditUrlImagen.Location = new System.Drawing.Point(0, 0);
-            this.LblEditUrlImagen.Name = "LblEditUrlImagen";
-            this.LblEditUrlImagen.Size = new System.Drawing.Size(84, 23);
-            this.LblEditUrlImagen.TabIndex = 0;
-            this.LblEditUrlImagen.Text = "Url Imagen";
-            this.LblEditUrlImagen.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // panel12
-            // 
-            this.panel12.BackColor = System.Drawing.Color.Olive;
-            this.panel12.Controls.Add(this.TxtDescripcion);
-            this.panel12.Controls.Add(this.LblEditDescripcion);
-            this.panel12.Location = new System.Drawing.Point(296, 468);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(594, 23);
-            this.panel12.TabIndex = 16;
-            // 
-            // TxtDescripcion
-            // 
-            this.TxtDescripcion.BackColor = System.Drawing.Color.Bisque;
-            this.TxtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TxtDescripcion.Location = new System.Drawing.Point(91, 0);
-            this.TxtDescripcion.Name = "TxtDescripcion";
-            this.TxtDescripcion.Size = new System.Drawing.Size(503, 23);
-            this.TxtDescripcion.TabIndex = 1;
-            // 
-            // LblEditDescripcion
-            // 
-            this.LblEditDescripcion.Dock = System.Windows.Forms.DockStyle.Left;
-            this.LblEditDescripcion.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LblEditDescripcion.Location = new System.Drawing.Point(0, 0);
-            this.LblEditDescripcion.Name = "LblEditDescripcion";
-            this.LblEditDescripcion.Size = new System.Drawing.Size(85, 23);
-            this.LblEditDescripcion.TabIndex = 0;
-            this.LblEditDescripcion.Text = "Descripción";
-            this.LblEditDescripcion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // BtnAceptar
-            // 
-            this.BtnAceptar.BackColor = System.Drawing.Color.Khaki;
-            this.BtnAceptar.FlatAppearance.BorderSize = 0;
-            this.BtnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAceptar.Location = new System.Drawing.Point(297, 526);
-            this.BtnAceptar.MaximumSize = new System.Drawing.Size(266, 53);
-            this.BtnAceptar.MinimumSize = new System.Drawing.Size(23, 53);
-            this.BtnAceptar.Name = "BtnAceptar";
-            this.BtnAceptar.Size = new System.Drawing.Size(266, 53);
-            this.BtnAceptar.TabIndex = 17;
-            this.BtnAceptar.Text = "Aceptar";
-            this.BtnAceptar.UseVisualStyleBackColor = false;
-            // 
-            // BtnCancelar
-            // 
-            this.BtnCancelar.BackColor = System.Drawing.Color.Salmon;
-            this.BtnCancelar.FlatAppearance.BorderSize = 0;
-            this.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCancelar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.BtnCancelar.Location = new System.Drawing.Point(625, 526);
-            this.BtnCancelar.MaximumSize = new System.Drawing.Size(266, 53);
-            this.BtnCancelar.MinimumSize = new System.Drawing.Size(23, 53);
-            this.BtnCancelar.Name = "BtnCancelar";
-            this.BtnCancelar.Size = new System.Drawing.Size(266, 53);
-            this.BtnCancelar.TabIndex = 18;
-            this.BtnCancelar.Text = "Cancelar";
-            this.BtnCancelar.UseVisualStyleBackColor = false;
-            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // Articulos
             // 
@@ -729,27 +729,27 @@
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Articulos_MouseUp);
             this.Resize += new System.EventHandler(this.Articulos_Resize);
             this.GrbPanel.ResumeLayout(false);
+            this.panel12.ResumeLayout(false);
+            this.panel12.PerformLayout();
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PbxArticulo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvArticulos)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PbxArticulo)).EndInit();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            this.panel9.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
-            this.panel12.ResumeLayout(false);
-            this.panel12.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

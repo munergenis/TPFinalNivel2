@@ -79,6 +79,9 @@ namespace Views
 
         private void Articulos_Load(object sender, EventArgs e)
         {
+            GrbPanel.Width = 266;
+            BtnModificar.Width = 266;
+            BtnEliminar.Width = 266;
             ListarArticulos();
             CargarLabels();
             EsconderBusquedaAvanzada();
