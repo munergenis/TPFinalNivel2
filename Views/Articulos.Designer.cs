@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GrbPanel = new System.Windows.Forms.GroupBox();
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.BtnAceptar = new System.Windows.Forms.Button();
@@ -72,6 +72,7 @@
             this.LblFiltroRapido = new System.Windows.Forms.Label();
             this.BtnToogleBusquedaAvanzada = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.LblLimpiar = new System.Windows.Forms.Label();
             this.LblTexto = new System.Windows.Forms.Label();
             this.LblCriterio = new System.Windows.Forms.Label();
             this.LblColumna = new System.Windows.Forms.Label();
@@ -83,7 +84,6 @@
             this.BtnClose = new System.Windows.Forms.Button();
             this.BtnMinimizar = new System.Windows.Forms.Button();
             this.BtnAgregar = new System.Windows.Forms.Button();
-            this.LblLimpiar = new System.Windows.Forms.Label();
             this.GrbPanel.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel11.SuspendLayout();
@@ -123,7 +123,7 @@
             this.GrbPanel.MaximumSize = new System.Drawing.Size(941, 655);
             this.GrbPanel.MinimumSize = new System.Drawing.Size(266, 655);
             this.GrbPanel.Name = "GrbPanel";
-            this.GrbPanel.Size = new System.Drawing.Size(266, 655);
+            this.GrbPanel.Size = new System.Drawing.Size(941, 655);
             this.GrbPanel.TabIndex = 2;
             this.GrbPanel.TabStop = false;
             // 
@@ -249,7 +249,7 @@
             this.LblEditMarca.Name = "LblEditMarca";
             this.LblEditMarca.Size = new System.Drawing.Size(71, 23);
             this.LblEditMarca.TabIndex = 0;
-            this.LblEditMarca.Text = "Marca";
+            this.LblEditMarca.Text = "Marca*";
             this.LblEditMarca.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel9
@@ -281,7 +281,7 @@
             this.LblEditCategoria.Name = "LblEditCategoria";
             this.LblEditCategoria.Size = new System.Drawing.Size(79, 23);
             this.LblEditCategoria.TabIndex = 0;
-            this.LblEditCategoria.Text = "Categoría";
+            this.LblEditCategoria.Text = "Categoría*";
             this.LblEditCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel8
@@ -299,9 +299,11 @@
             this.TxtPrecio.BackColor = System.Drawing.Color.Bisque;
             this.TxtPrecio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxtPrecio.Location = new System.Drawing.Point(90, 0);
+            this.TxtPrecio.MaxLength = 9;
             this.TxtPrecio.Name = "TxtPrecio";
             this.TxtPrecio.Size = new System.Drawing.Size(503, 23);
             this.TxtPrecio.TabIndex = 0;
+            this.TxtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPrecio_KeyPress);
             // 
             // LblEditPrecio
             // 
@@ -312,7 +314,7 @@
             this.LblEditPrecio.Name = "LblEditPrecio";
             this.LblEditPrecio.Size = new System.Drawing.Size(71, 23);
             this.LblEditPrecio.TabIndex = 0;
-            this.LblEditPrecio.Text = "Precio";
+            this.LblEditPrecio.Text = "Precio*";
             this.LblEditPrecio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel7
@@ -343,7 +345,7 @@
             this.LblEditNombre.Name = "LblEditNombre";
             this.LblEditNombre.Size = new System.Drawing.Size(74, 23);
             this.LblEditNombre.TabIndex = 0;
-            this.LblEditNombre.Text = "Nombre";
+            this.LblEditNombre.Text = "Nombre*";
             this.LblEditNombre.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel6
@@ -374,7 +376,7 @@
             this.LblEditCodigo.Name = "LblEditCodigo";
             this.LblEditCodigo.Size = new System.Drawing.Size(71, 23);
             this.LblEditCodigo.TabIndex = 0;
-            this.LblEditCodigo.Text = "Código";
+            this.LblEditCodigo.Text = "Código*";
             this.LblEditCodigo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // BtnEliminar
@@ -509,23 +511,23 @@
             this.DgvArticulos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DgvArticulos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.DgvArticulos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Bisque;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Bisque;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.WindowFrame;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvArticulos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Bisque;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Bisque;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.WindowFrame;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvArticulos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.DgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Peru;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvArticulos.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Peru;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvArticulos.DefaultCellStyle = dataGridViewCellStyle8;
             this.DgvArticulos.EnableHeadersVisualStyles = false;
             this.DgvArticulos.GridColor = System.Drawing.Color.Salmon;
             this.DgvArticulos.Location = new System.Drawing.Point(292, 133);
@@ -603,6 +605,16 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(592, 69);
             this.panel5.TabIndex = 14;
+            // 
+            // LblLimpiar
+            // 
+            this.LblLimpiar.AutoSize = true;
+            this.LblLimpiar.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.LblLimpiar.Location = new System.Drawing.Point(324, 27);
+            this.LblLimpiar.Name = "LblLimpiar";
+            this.LblLimpiar.Size = new System.Drawing.Size(202, 18);
+            this.LblLimpiar.TabIndex = 19;
+            this.LblLimpiar.Text = "*Busqueda en blanco para limpiar";
             // 
             // LblTexto
             // 
@@ -719,16 +731,6 @@
             this.BtnAgregar.TabIndex = 5;
             this.BtnAgregar.UseVisualStyleBackColor = false;
             this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
-            // 
-            // LblLimpiar
-            // 
-            this.LblLimpiar.AutoSize = true;
-            this.LblLimpiar.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.LblLimpiar.Location = new System.Drawing.Point(324, 27);
-            this.LblLimpiar.Name = "LblLimpiar";
-            this.LblLimpiar.Size = new System.Drawing.Size(202, 18);
-            this.LblLimpiar.TabIndex = 19;
-            this.LblLimpiar.Text = "*Busqueda en blanco para limpiar";
             // 
             // Articulos
             // 

@@ -223,11 +223,29 @@ namespace Views
 
         private void BtnAceptar_Click(object sender, EventArgs e)
         {
+            if (TxtCodigo.Text == "" || TxtNombre.Text == "" || TxtPrecio.Text == "")
+            {
+                Warning validacionTextBox = new Warning();
+                validacionTextBox.WarningText = "Campos con * no pueden quedar vacíos";
+                validacionTextBox.ShowDialog();
+                return;
+            }
+
             if (isNew)
             {
-                Articulo nuevo = new Articulo();
-                CargarNuevoModificar(nuevo);
-                articuloBusiness.Agregar(nuevo);
+                if (CbxCategoria.SelectedIndex == -1 || CbxMarca.SelectedIndex == -1)
+                {
+                    Warning avisoCbxVacio = new Warning();
+                    avisoCbxVacio.WarningText = "Selecciona una Categoría y una Marca";
+                    avisoCbxVacio.ShowDialog();
+                    return;
+                }
+                else
+                {
+                    Articulo nuevo = new Articulo();
+                    CargarNuevoModificar(nuevo);
+                    articuloBusiness.Agregar(nuevo);
+                }
             }
             else
             {
@@ -304,6 +322,15 @@ namespace Views
         }
 
         private void TxtBusquedaAvanzada_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+                e.Handled = true;
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+                e.Handled = true;
+        }
+
+        private void TxtPrecio_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
                 e.Handled = true;
