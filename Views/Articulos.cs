@@ -259,16 +259,19 @@ namespace Views
 
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
-            Warning eliminar = new Warning();
-            eliminar.WarningText = "¿Quieres eliminar? No se podrá recuperar el artículo!";
-            eliminar.ShowDialog();
-            if (eliminar.Return == true)
+            if (DgvArticulos.Rows.Count > 0)
             {
-                CargarSeleccionado();
-                articuloBusiness.Eliminar(seleccionado);
-                ListarArticulos();
-                DgvArticulos.Focus();
-                TxtFiltroRapido.Text = "";
+                Warning eliminar = new Warning();
+                eliminar.WarningText = "¿Quieres eliminar? No se podrá recuperar el artículo!";
+                eliminar.ShowDialog();
+                if (eliminar.Return == true)
+                {
+                    CargarSeleccionado();
+                    articuloBusiness.Eliminar(seleccionado);
+                    ListarArticulos();
+                    DgvArticulos.Focus();
+                    TxtFiltroRapido.Text = "";
+                }
             }
         }
         
@@ -307,12 +310,21 @@ namespace Views
                     listFiltrada = articuloBusiness.FiltrarArticulos(columna, criterio, texto);
                     DgvArticulos.DataSource = null;
                     DgvArticulos.DataSource = listFiltrada;
+
+                    OcultarColumna("Id");
+                    OcultarColumna("Descripcion");
+                    OcultarColumna("ImagenUrl");
                 }
                 else
                 {
                     lista = articuloBusiness.ListarArticulos();
                     DgvArticulos.DataSource = null;
                     DgvArticulos.DataSource = lista;
+
+
+                    OcultarColumna("Id");
+                    OcultarColumna("Descripcion");
+                    OcultarColumna("ImagenUrl");
 
                     TxtBusquedaAvanzada.MaxLength = 50;
                     TxtBusquedaAvanzada.Text = "Solo acepta números";
