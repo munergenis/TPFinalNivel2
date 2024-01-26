@@ -21,11 +21,12 @@ namespace Views
         }
 
         // Atributos y Properties
-        public Form RefToLobby { get; set; }
         private bool dragging = false;
         private Point dragCursorPoint;
         private Point dragFormPoint;
         private bool expand = false;
+        private bool isNew = false;
+        public Form RefToLobby { get; set; }
 
         // Objetos
         List<Articulo> lista = null;
@@ -92,9 +93,20 @@ namespace Views
 
         private void DgvArticulos_SelectionChanged(object sender, EventArgs e)
         {
-            seleccionado = (Articulo)DgvArticulos.CurrentRow.DataBoundItem;
-            CargarImagen(seleccionado.ImagenUrl);
-            CargarLabels(seleccionado);
+            if (DgvArticulos.Rows.Count > 0 || expand == false)
+            {
+                try
+                {
+                    seleccionado = (Articulo)DgvArticulos.CurrentRow.DataBoundItem;
+                    CargarImagen(seleccionado.ImagenUrl);
+                    CargarLabels(seleccionado);
+                }
+                catch (Exception ex)
+                {
+                    seleccionado = null;
+                    //MessageBox.Show(ex.ToString());
+                }
+            }
         }
 
         private void BtnToogleBusquedaAvanzada_Click(object sender, EventArgs e)
@@ -164,6 +176,7 @@ namespace Views
             CargarTextBox();
             CbxCategoria.SelectedIndex = -1;
             CbxMarca.SelectedIndex = -1;
+            isNew = true;
         }
 
         private void BtnModificar_Click(object sender, EventArgs e)
@@ -174,21 +187,31 @@ namespace Views
                 CargarTextBox(seleccionado);
                 CbxCategoria.SelectedValue = seleccionado.Categoria.Id;
                 CbxMarca.SelectedValue = seleccionado.Marca.Id;
+                isNew = false;
             }
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
-            timer1.Start();
-            DgvArticulos.Focus();
-            seleccionado = (Articulo)DgvArticulos.CurrentRow.DataBoundItem;
-            CargarImagen(seleccionado.ImagenUrl);
-            CargarLabels(seleccionado);
+            Warning cancelar = new Warning();
+            cancelar.WarningText = "¿Quieres cerrar? Se perderan los cambios";
+            cancelar.ShowDialog();
+
+            if (cancelar.Return == true)
+            {
+                CerrarEditor();
+            }
         }
 
         // Métodos
         private void ListarArticulos()
         {
+            if (lista != null)
+            {
+                lista.Clear();
+            }
+            DgvArticulos.DataSource = null;
+            DgvArticulos.Update();
             lista = articuloBusiness.ListarArticulos();
             DgvArticulos.DataSource = lista;
             OcultarColumna("Id");
@@ -210,7 +233,7 @@ namespace Views
             }
             catch (Exception)
             {
-                PbxArticulo.Image = Properties.Resources.placeholder2;
+                PbxArticulo.Image = Properties.Resources.techplaceholder;
             }
         }
 
@@ -275,6 +298,43 @@ namespace Views
             CbxMarca.DataSource = marcaBusiness.Listar();
             CbxMarca.ValueMember = "Id";
             CbxMarca.DisplayMember = "Descripcion";
+        }
+
+        private void BtnAceptar_Click(object sender, EventArgs e)
+        {
+            if (isNew)
+            {
+                Articulo nuevo = new Articulo();
+                CargarNuevoModificar(nuevo);
+                articuloBusiness.Agregar(nuevo);
+            }
+            else
+            {
+                CargarNuevoModificar(seleccionado);
+                articuloBusiness.Modificar(seleccionado);
+            }
+            ListarArticulos();
+            CerrarEditor();
+        }
+
+        private void CargarNuevoModificar(Articulo articulo)
+        {
+            articulo.Codigo = TxtCodigo.Text;
+            articulo.Nombre = TxtNombre.Text;
+            articulo.Descripcion = TxtDescripcion.Text;
+            articulo.Marca = (Marca)CbxMarca.SelectedItem;
+            articulo.Categoria = (Categoria)CbxCategoria.SelectedItem;
+            articulo.ImagenUrl = TxtUrlImagen.Text;
+            articulo.Precio = decimal.Parse(TxtPrecio.Text);
+        }
+
+        private void CerrarEditor()
+        {
+            timer1.Start();
+            DgvArticulos.Focus();
+            seleccionado = (Articulo)DgvArticulos.CurrentRow.DataBoundItem;
+            CargarImagen(seleccionado.ImagenUrl);
+            CargarLabels(seleccionado);
         }
     }
 }

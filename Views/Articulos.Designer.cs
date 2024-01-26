@@ -64,7 +64,6 @@
             this.LblMarca = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.LblCategoria = new System.Windows.Forms.Label();
-            this.PbxArticulo = new System.Windows.Forms.PictureBox();
             this.LblArticulos = new System.Windows.Forms.Label();
             this.DgvArticulos = new System.Windows.Forms.DataGridView();
             this.TxtFiltroRapido = new System.Windows.Forms.TextBox();
@@ -75,14 +74,15 @@
             this.LblTexto = new System.Windows.Forms.Label();
             this.LblCriterio = new System.Windows.Forms.Label();
             this.LblColumna = new System.Windows.Forms.Label();
-            this.BtnBusquedaAvanzada = new System.Windows.Forms.Button();
             this.TxtBusquedaAvanzada = new System.Windows.Forms.TextBox();
             this.CbxCriterioBusquedaAvanzada = new System.Windows.Forms.ComboBox();
             this.CbxColumnaBusquedaAvanzada = new System.Windows.Forms.ComboBox();
-            this.BtnAgregar = new System.Windows.Forms.Button();
-            this.BtnMinimizar = new System.Windows.Forms.Button();
-            this.BtnClose = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.PbxArticulo = new System.Windows.Forms.PictureBox();
+            this.BtnBusquedaAvanzada = new System.Windows.Forms.Button();
+            this.BtnClose = new System.Windows.Forms.Button();
+            this.BtnMinimizar = new System.Windows.Forms.Button();
+            this.BtnAgregar = new System.Windows.Forms.Button();
             this.GrbPanel.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel11.SuspendLayout();
@@ -94,10 +94,10 @@
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PbxArticulo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvArticulos)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxArticulo)).BeginInit();
             this.SuspendLayout();
             // 
             // GrbPanel
@@ -122,7 +122,7 @@
             this.GrbPanel.MaximumSize = new System.Drawing.Size(941, 655);
             this.GrbPanel.MinimumSize = new System.Drawing.Size(266, 655);
             this.GrbPanel.Name = "GrbPanel";
-            this.GrbPanel.Size = new System.Drawing.Size(941, 655);
+            this.GrbPanel.Size = new System.Drawing.Size(487, 655);
             this.GrbPanel.TabIndex = 2;
             this.GrbPanel.TabStop = false;
             // 
@@ -137,14 +137,14 @@
             this.BtnCancelar.MinimumSize = new System.Drawing.Size(23, 53);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(266, 53);
-            this.BtnCancelar.TabIndex = 18;
+            this.BtnCancelar.TabIndex = 8;
             this.BtnCancelar.Text = "Cancelar";
             this.BtnCancelar.UseVisualStyleBackColor = false;
             this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // BtnAceptar
             // 
-            this.BtnAceptar.BackColor = System.Drawing.Color.Khaki;
+            this.BtnAceptar.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.BtnAceptar.FlatAppearance.BorderSize = 0;
             this.BtnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAceptar.Location = new System.Drawing.Point(297, 526);
@@ -152,19 +152,20 @@
             this.BtnAceptar.MinimumSize = new System.Drawing.Size(23, 53);
             this.BtnAceptar.Name = "BtnAceptar";
             this.BtnAceptar.Size = new System.Drawing.Size(266, 53);
-            this.BtnAceptar.TabIndex = 17;
+            this.BtnAceptar.TabIndex = 7;
             this.BtnAceptar.Text = "Aceptar";
             this.BtnAceptar.UseVisualStyleBackColor = false;
+            this.BtnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
             // 
             // panel12
             // 
-            this.panel12.BackColor = System.Drawing.Color.Olive;
+            this.panel12.BackColor = System.Drawing.Color.Peru;
             this.panel12.Controls.Add(this.TxtDescripcion);
             this.panel12.Controls.Add(this.LblEditDescripcion);
             this.panel12.Location = new System.Drawing.Point(296, 468);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(594, 23);
-            this.panel12.TabIndex = 16;
+            this.panel12.TabIndex = 6;
             // 
             // TxtDescripcion
             // 
@@ -173,10 +174,11 @@
             this.TxtDescripcion.Location = new System.Drawing.Point(91, 0);
             this.TxtDescripcion.Name = "TxtDescripcion";
             this.TxtDescripcion.Size = new System.Drawing.Size(503, 23);
-            this.TxtDescripcion.TabIndex = 1;
+            this.TxtDescripcion.TabIndex = 0;
             // 
             // LblEditDescripcion
             // 
+            this.LblEditDescripcion.BackColor = System.Drawing.Color.Peru;
             this.LblEditDescripcion.Dock = System.Windows.Forms.DockStyle.Left;
             this.LblEditDescripcion.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.LblEditDescripcion.Location = new System.Drawing.Point(0, 0);
@@ -188,13 +190,13 @@
             // 
             // panel11
             // 
-            this.panel11.BackColor = System.Drawing.Color.Olive;
+            this.panel11.BackColor = System.Drawing.Color.Peru;
             this.panel11.Controls.Add(this.TxtUrlImagen);
             this.panel11.Controls.Add(this.LblEditUrlImagen);
             this.panel11.Location = new System.Drawing.Point(297, 407);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(593, 23);
-            this.panel11.TabIndex = 15;
+            this.panel11.TabIndex = 5;
             // 
             // TxtUrlImagen
             // 
@@ -203,11 +205,12 @@
             this.TxtUrlImagen.Location = new System.Drawing.Point(90, 0);
             this.TxtUrlImagen.Name = "TxtUrlImagen";
             this.TxtUrlImagen.Size = new System.Drawing.Size(503, 23);
-            this.TxtUrlImagen.TabIndex = 1;
+            this.TxtUrlImagen.TabIndex = 0;
             this.TxtUrlImagen.TextChanged += new System.EventHandler(this.TxtUrlImagen_TextChanged);
             // 
             // LblEditUrlImagen
             // 
+            this.LblEditUrlImagen.BackColor = System.Drawing.Color.Peru;
             this.LblEditUrlImagen.Dock = System.Windows.Forms.DockStyle.Left;
             this.LblEditUrlImagen.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.LblEditUrlImagen.Location = new System.Drawing.Point(0, 0);
@@ -219,13 +222,13 @@
             // 
             // panel10
             // 
-            this.panel10.BackColor = System.Drawing.Color.Olive;
+            this.panel10.BackColor = System.Drawing.Color.Peru;
             this.panel10.Controls.Add(this.CbxMarca);
             this.panel10.Controls.Add(this.LblEditMarca);
             this.panel10.Location = new System.Drawing.Point(297, 224);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(592, 23);
-            this.panel10.TabIndex = 15;
+            this.panel10.TabIndex = 2;
             // 
             // CbxMarca
             // 
@@ -234,10 +237,11 @@
             this.CbxMarca.Location = new System.Drawing.Point(90, -1);
             this.CbxMarca.Name = "CbxMarca";
             this.CbxMarca.Size = new System.Drawing.Size(503, 26);
-            this.CbxMarca.TabIndex = 17;
+            this.CbxMarca.TabIndex = 0;
             // 
             // LblEditMarca
             // 
+            this.LblEditMarca.BackColor = System.Drawing.Color.Peru;
             this.LblEditMarca.Dock = System.Windows.Forms.DockStyle.Left;
             this.LblEditMarca.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.LblEditMarca.Location = new System.Drawing.Point(0, 0);
@@ -249,13 +253,13 @@
             // 
             // panel9
             // 
-            this.panel9.BackColor = System.Drawing.Color.Olive;
+            this.panel9.BackColor = System.Drawing.Color.Peru;
             this.panel9.Controls.Add(this.CbxCategoria);
             this.panel9.Controls.Add(this.LblEditCategoria);
             this.panel9.Location = new System.Drawing.Point(297, 285);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(592, 23);
-            this.panel9.TabIndex = 14;
+            this.panel9.TabIndex = 3;
             // 
             // CbxCategoria
             // 
@@ -265,10 +269,11 @@
             this.CbxCategoria.Location = new System.Drawing.Point(90, -1);
             this.CbxCategoria.Name = "CbxCategoria";
             this.CbxCategoria.Size = new System.Drawing.Size(503, 26);
-            this.CbxCategoria.TabIndex = 16;
+            this.CbxCategoria.TabIndex = 0;
             // 
             // LblEditCategoria
             // 
+            this.LblEditCategoria.BackColor = System.Drawing.Color.Peru;
             this.LblEditCategoria.Dock = System.Windows.Forms.DockStyle.Left;
             this.LblEditCategoria.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.LblEditCategoria.Location = new System.Drawing.Point(0, 0);
@@ -280,13 +285,13 @@
             // 
             // panel8
             // 
-            this.panel8.BackColor = System.Drawing.Color.Olive;
+            this.panel8.BackColor = System.Drawing.Color.Peru;
             this.panel8.Controls.Add(this.TxtPrecio);
             this.panel8.Controls.Add(this.LblEditPrecio);
             this.panel8.Location = new System.Drawing.Point(297, 346);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(593, 23);
-            this.panel8.TabIndex = 14;
+            this.panel8.TabIndex = 4;
             // 
             // TxtPrecio
             // 
@@ -295,10 +300,11 @@
             this.TxtPrecio.Location = new System.Drawing.Point(90, 0);
             this.TxtPrecio.Name = "TxtPrecio";
             this.TxtPrecio.Size = new System.Drawing.Size(503, 23);
-            this.TxtPrecio.TabIndex = 1;
+            this.TxtPrecio.TabIndex = 0;
             // 
             // LblEditPrecio
             // 
+            this.LblEditPrecio.BackColor = System.Drawing.Color.Peru;
             this.LblEditPrecio.Dock = System.Windows.Forms.DockStyle.Left;
             this.LblEditPrecio.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.LblEditPrecio.Location = new System.Drawing.Point(0, 0);
@@ -310,13 +316,13 @@
             // 
             // panel7
             // 
-            this.panel7.BackColor = System.Drawing.Color.Olive;
+            this.panel7.BackColor = System.Drawing.Color.Peru;
             this.panel7.Controls.Add(this.TxtNombre);
             this.panel7.Controls.Add(this.LblEditNombre);
             this.panel7.Location = new System.Drawing.Point(297, 163);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(593, 23);
-            this.panel7.TabIndex = 14;
+            this.panel7.TabIndex = 1;
             // 
             // TxtNombre
             // 
@@ -325,10 +331,11 @@
             this.TxtNombre.Location = new System.Drawing.Point(90, 0);
             this.TxtNombre.Name = "TxtNombre";
             this.TxtNombre.Size = new System.Drawing.Size(503, 23);
-            this.TxtNombre.TabIndex = 1;
+            this.TxtNombre.TabIndex = 0;
             // 
             // LblEditNombre
             // 
+            this.LblEditNombre.BackColor = System.Drawing.Color.Peru;
             this.LblEditNombre.Dock = System.Windows.Forms.DockStyle.Left;
             this.LblEditNombre.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.LblEditNombre.Location = new System.Drawing.Point(0, 0);
@@ -340,13 +347,13 @@
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.Color.Olive;
+            this.panel6.BackColor = System.Drawing.Color.Peru;
             this.panel6.Controls.Add(this.TxtCodigo);
             this.panel6.Controls.Add(this.LblEditCodigo);
             this.panel6.Location = new System.Drawing.Point(297, 102);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(593, 23);
-            this.panel6.TabIndex = 13;
+            this.panel6.TabIndex = 1;
             // 
             // TxtCodigo
             // 
@@ -355,10 +362,11 @@
             this.TxtCodigo.Location = new System.Drawing.Point(90, 0);
             this.TxtCodigo.Name = "TxtCodigo";
             this.TxtCodigo.Size = new System.Drawing.Size(503, 23);
-            this.TxtCodigo.TabIndex = 1;
+            this.TxtCodigo.TabIndex = 0;
             // 
             // LblEditCodigo
             // 
+            this.LblEditCodigo.BackColor = System.Drawing.Color.Peru;
             this.LblEditCodigo.Dock = System.Windows.Forms.DockStyle.Left;
             this.LblEditCodigo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.LblEditCodigo.Location = new System.Drawing.Point(0, 0);
@@ -378,21 +386,21 @@
             this.BtnEliminar.MaximumSize = new System.Drawing.Size(266, 53);
             this.BtnEliminar.MinimumSize = new System.Drawing.Size(23, 53);
             this.BtnEliminar.Name = "BtnEliminar";
-            this.BtnEliminar.Size = new System.Drawing.Size(23, 53);
+            this.BtnEliminar.Size = new System.Drawing.Size(266, 53);
             this.BtnEliminar.TabIndex = 12;
             this.BtnEliminar.Text = "Eliminar";
             this.BtnEliminar.UseVisualStyleBackColor = false;
             // 
             // BtnModificar
             // 
-            this.BtnModificar.BackColor = System.Drawing.Color.Khaki;
+            this.BtnModificar.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.BtnModificar.FlatAppearance.BorderSize = 0;
             this.BtnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnModificar.Location = new System.Drawing.Point(0, 480);
             this.BtnModificar.MaximumSize = new System.Drawing.Size(266, 53);
             this.BtnModificar.MinimumSize = new System.Drawing.Size(23, 53);
             this.BtnModificar.Name = "BtnModificar";
-            this.BtnModificar.Size = new System.Drawing.Size(23, 53);
+            this.BtnModificar.Size = new System.Drawing.Size(266, 53);
             this.BtnModificar.TabIndex = 11;
             this.BtnModificar.Text = "Modificar";
             this.BtnModificar.UseVisualStyleBackColor = false;
@@ -466,15 +474,6 @@
             this.LblCategoria.Text = "label1";
             this.LblCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // PbxArticulo
-            // 
-            this.PbxArticulo.Location = new System.Drawing.Point(34, 72);
-            this.PbxArticulo.Name = "PbxArticulo";
-            this.PbxArticulo.Size = new System.Drawing.Size(200, 200);
-            this.PbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PbxArticulo.TabIndex = 0;
-            this.PbxArticulo.TabStop = false;
-            // 
             // LblArticulos
             // 
             this.LblArticulos.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -512,7 +511,7 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Olive;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Peru;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DgvArticulos.DefaultCellStyle = dataGridViewCellStyle2;
@@ -527,6 +526,7 @@
             this.DgvArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvArticulos.Size = new System.Drawing.Size(607, 325);
             this.DgvArticulos.TabIndex = 3;
+            this.DgvArticulos.TabStop = false;
             this.DgvArticulos.SelectionChanged += new System.EventHandler(this.DgvArticulos_SelectionChanged);
             // 
             // TxtFiltroRapido
@@ -552,7 +552,7 @@
             // 
             // LblFiltroRapido
             // 
-            this.LblFiltroRapido.BackColor = System.Drawing.Color.Olive;
+            this.LblFiltroRapido.BackColor = System.Drawing.Color.Peru;
             this.LblFiltroRapido.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.LblFiltroRapido.Location = new System.Drawing.Point(3, 0);
             this.LblFiltroRapido.Name = "LblFiltroRapido";
@@ -564,7 +564,7 @@
             // BtnToogleBusquedaAvanzada
             // 
             this.BtnToogleBusquedaAvanzada.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.BtnToogleBusquedaAvanzada.BackColor = System.Drawing.Color.Olive;
+            this.BtnToogleBusquedaAvanzada.BackColor = System.Drawing.Color.Peru;
             this.BtnToogleBusquedaAvanzada.FlatAppearance.BorderSize = 0;
             this.BtnToogleBusquedaAvanzada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnToogleBusquedaAvanzada.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -618,20 +618,6 @@
             this.LblColumna.Text = "Columna";
             this.LblColumna.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // BtnBusquedaAvanzada
-            // 
-            this.BtnBusquedaAvanzada.BackColor = System.Drawing.Color.Olive;
-            this.BtnBusquedaAvanzada.BackgroundImage = global::Views.Properties.Resources.Buscar;
-            this.BtnBusquedaAvanzada.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.BtnBusquedaAvanzada.FlatAppearance.BorderSize = 0;
-            this.BtnBusquedaAvanzada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnBusquedaAvanzada.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.BtnBusquedaAvanzada.Location = new System.Drawing.Point(569, 1);
-            this.BtnBusquedaAvanzada.Name = "BtnBusquedaAvanzada";
-            this.BtnBusquedaAvanzada.Size = new System.Drawing.Size(23, 23);
-            this.BtnBusquedaAvanzada.TabIndex = 15;
-            this.BtnBusquedaAvanzada.UseVisualStyleBackColor = false;
-            // 
             // TxtBusquedaAvanzada
             // 
             this.TxtBusquedaAvanzada.BackColor = System.Drawing.Color.Ivory;
@@ -657,33 +643,33 @@
             this.CbxColumnaBusquedaAvanzada.Size = new System.Drawing.Size(175, 26);
             this.CbxColumnaBusquedaAvanzada.TabIndex = 0;
             // 
-            // BtnAgregar
+            // timer1
             // 
-            this.BtnAgregar.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.BtnAgregar.BackColor = System.Drawing.Color.Olive;
-            this.BtnAgregar.FlatAppearance.BorderSize = 0;
-            this.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAgregar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.BtnAgregar.Image = global::Views.Properties.Resources.add2;
-            this.BtnAgregar.Location = new System.Drawing.Point(292, 469);
-            this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(53, 53);
-            this.BtnAgregar.TabIndex = 5;
-            this.BtnAgregar.UseVisualStyleBackColor = false;
-            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
+            this.timer1.Interval = 1;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // BtnMinimizar
+            // PbxArticulo
             // 
-            this.BtnMinimizar.FlatAppearance.BorderSize = 0;
-            this.BtnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnMinimizar.Image = global::Views.Properties.Resources.minimize_FILL0_wght400_GRAD0_opsz24;
-            this.BtnMinimizar.Location = new System.Drawing.Point(857, 17);
-            this.BtnMinimizar.Margin = new System.Windows.Forms.Padding(4);
-            this.BtnMinimizar.Name = "BtnMinimizar";
-            this.BtnMinimizar.Size = new System.Drawing.Size(27, 32);
-            this.BtnMinimizar.TabIndex = 4;
-            this.BtnMinimizar.UseVisualStyleBackColor = true;
-            this.BtnMinimizar.Click += new System.EventHandler(this.BtnMinimizar_Click);
+            this.PbxArticulo.Location = new System.Drawing.Point(34, 72);
+            this.PbxArticulo.Name = "PbxArticulo";
+            this.PbxArticulo.Size = new System.Drawing.Size(200, 200);
+            this.PbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PbxArticulo.TabIndex = 0;
+            this.PbxArticulo.TabStop = false;
+            // 
+            // BtnBusquedaAvanzada
+            // 
+            this.BtnBusquedaAvanzada.BackColor = System.Drawing.Color.Peru;
+            this.BtnBusquedaAvanzada.BackgroundImage = global::Views.Properties.Resources.Buscar;
+            this.BtnBusquedaAvanzada.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.BtnBusquedaAvanzada.FlatAppearance.BorderSize = 0;
+            this.BtnBusquedaAvanzada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnBusquedaAvanzada.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.BtnBusquedaAvanzada.Location = new System.Drawing.Point(569, 1);
+            this.BtnBusquedaAvanzada.Name = "BtnBusquedaAvanzada";
+            this.BtnBusquedaAvanzada.Size = new System.Drawing.Size(23, 23);
+            this.BtnBusquedaAvanzada.TabIndex = 15;
+            this.BtnBusquedaAvanzada.UseVisualStyleBackColor = false;
             // 
             // BtnClose
             // 
@@ -698,10 +684,33 @@
             this.BtnClose.UseVisualStyleBackColor = true;
             this.BtnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
-            // timer1
+            // BtnMinimizar
             // 
-            this.timer1.Interval = 1;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.BtnMinimizar.FlatAppearance.BorderSize = 0;
+            this.BtnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnMinimizar.Image = global::Views.Properties.Resources.minimize_FILL0_wght400_GRAD0_opsz24;
+            this.BtnMinimizar.Location = new System.Drawing.Point(857, 17);
+            this.BtnMinimizar.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnMinimizar.Name = "BtnMinimizar";
+            this.BtnMinimizar.Size = new System.Drawing.Size(27, 32);
+            this.BtnMinimizar.TabIndex = 4;
+            this.BtnMinimizar.UseVisualStyleBackColor = true;
+            this.BtnMinimizar.Click += new System.EventHandler(this.BtnMinimizar_Click);
+            // 
+            // BtnAgregar
+            // 
+            this.BtnAgregar.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.BtnAgregar.BackColor = System.Drawing.Color.Peru;
+            this.BtnAgregar.FlatAppearance.BorderSize = 0;
+            this.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAgregar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.BtnAgregar.Image = global::Views.Properties.Resources.add2;
+            this.BtnAgregar.Location = new System.Drawing.Point(292, 469);
+            this.BtnAgregar.Name = "BtnAgregar";
+            this.BtnAgregar.Size = new System.Drawing.Size(53, 53);
+            this.BtnAgregar.TabIndex = 5;
+            this.BtnAgregar.UseVisualStyleBackColor = false;
+            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
             // Articulos
             // 
@@ -748,12 +757,12 @@
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.PbxArticulo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvArticulos)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxArticulo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

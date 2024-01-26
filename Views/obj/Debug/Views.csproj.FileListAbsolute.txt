@@ -14,3 +14,4 @@ C:\Users\genis\OneDrive\Escritorio\Programacio\RepoGitHub\TPFinal Nivel2\TPFinal
 C:\Users\genis\OneDrive\Escritorio\Programacio\RepoGitHub\TPFinal Nivel2\TPFinalNivel2_Muner\Views\obj\Debug\Views.exe
 C:\Users\genis\OneDrive\Escritorio\Programacio\RepoGitHub\TPFinal Nivel2\TPFinalNivel2_Muner\Views\obj\Debug\Views.pdb
 C:\Users\genis\OneDrive\Escritorio\Programacio\RepoGitHub\TPFinal Nivel2\TPFinalNivel2_Muner\Views\obj\Debug\Views.Articulos.resources
+C:\Users\genis\OneDrive\Escritorio\Programacio\RepoGitHub\TPFinal Nivel2\TPFinalNivel2_Muner\Views\obj\Debug\Views.Warning.resources

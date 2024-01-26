@@ -12,10 +12,11 @@ namespace Business
     {
         DataAccess dataAccess = new DataAccess();
         List<Articulo> lista = new List<Articulo>();
+        string queryString = string.Empty;
 
         public List<Articulo> ListarArticulos()
         {
-            string queryString = "SELECT A.Id, Codigo, Nombre, A.Descripcion, M.Id as IdMarca, M.Descripcion as Marca, C.Id as IdCategoria, C.Descripcion as Categoria, ImagenUrl, Precio FROM ARTICULOS A, CATEGORIAS C, MARCAS M WHERE A.IdMarca = M.Id AND A.IdCategoria = C.Id";
+            queryString = "SELECT A.Id, Codigo, Nombre, A.Descripcion, M.Id as IdMarca, M.Descripcion as Marca, C.Id as IdCategoria, C.Descripcion as Categoria, ImagenUrl, Precio FROM ARTICULOS A, CATEGORIAS C, MARCAS M WHERE A.IdMarca = M.Id AND A.IdCategoria = C.Id";
             dataAccess.SetQuery(queryString);
 
             try
@@ -43,6 +44,44 @@ namespace Business
                     lista.Add(temp);
                 }
                 return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                dataAccess.CloseConnection();
+            }
+        }
+
+        public void Agregar(Articulo nuevo)
+        {
+            queryString = $"INSERT INTO ARTICULOS VALUES ('{nuevo.Codigo}', '{nuevo.Nombre}', '{nuevo.Descripcion}', {nuevo.Marca.Id}, {nuevo.Categoria.Id}, '{nuevo.ImagenUrl}', {nuevo.Precio})";
+            dataAccess.SetQuery(queryString);
+
+            try
+            {
+                dataAccess.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                dataAccess.CloseConnection();
+            }
+        }
+
+        public void Modificar(Articulo modificado)
+        {
+            queryString = $"UPDATE ARTICULOS SET Codigo = '{modificado.Codigo}', Nombre = '{modificado.Nombre}', Descripcion = '{modificado.Descripcion}', IdMarca = {modificado.Marca.Id}, IdCategoria = {modificado.Categoria.Id}, ImagenUrl = '{modificado.ImagenUrl}', Precio = {modificado.Precio} WHERE Id = {modificado.Id}";
+            dataAccess.SetQuery(queryString);
+
+            try
+            {
+                dataAccess.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
