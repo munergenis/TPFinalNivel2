@@ -203,6 +203,45 @@ namespace Views
             }
         }
 
+        private void TxtUrlImagen_TextChanged(object sender, EventArgs e)
+        {
+            CargarImagen(TxtUrlImagen.Text);
+        }
+
+        private void BtnAceptar_Click(object sender, EventArgs e)
+        {
+            if (isNew)
+            {
+                Articulo nuevo = new Articulo();
+                CargarNuevoModificar(nuevo);
+                articuloBusiness.Agregar(nuevo);
+            }
+            else
+            {
+                CargarNuevoModificar(seleccionado);
+                articuloBusiness.Modificar(seleccionado);
+            }
+            ListarArticulos();
+            CerrarEditor();
+        }
+
+        private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            // Mostrar warning
+            // Si devueve true
+                // articulobusines.eliminar(selec)
+                // listarArticulos
+            Warning eliminar = new Warning();
+            eliminar.WarningText = "¿Quieres eliminar? No se podrá recuperar el artículo!";
+            eliminar.ShowDialog();
+            if (eliminar.Return == true)
+            {
+                articuloBusiness.Eliminar(seleccionado);
+                ListarArticulos();
+                DgvArticulos.Focus();
+            }
+        }
+       
         // Métodos
         private void ListarArticulos()
         {
@@ -265,11 +304,6 @@ namespace Views
             LblDescripcion.Text = lista[0].Descripcion;
         }
 
-        private void TxtUrlImagen_TextChanged(object sender, EventArgs e)
-        {
-            CargarImagen(TxtUrlImagen.Text);
-        }
-
         private void CargarTextBox(Articulo seleccionado)
         {
             TxtCodigo.Text = seleccionado.Codigo;
@@ -300,23 +334,6 @@ namespace Views
             CbxMarca.DisplayMember = "Descripcion";
         }
 
-        private void BtnAceptar_Click(object sender, EventArgs e)
-        {
-            if (isNew)
-            {
-                Articulo nuevo = new Articulo();
-                CargarNuevoModificar(nuevo);
-                articuloBusiness.Agregar(nuevo);
-            }
-            else
-            {
-                CargarNuevoModificar(seleccionado);
-                articuloBusiness.Modificar(seleccionado);
-            }
-            ListarArticulos();
-            CerrarEditor();
-        }
-
         private void CargarNuevoModificar(Articulo articulo)
         {
             articulo.Codigo = TxtCodigo.Text;
@@ -336,5 +353,6 @@ namespace Views
             CargarImagen(seleccionado.ImagenUrl);
             CargarLabels(seleccionado);
         }
+
     }
 }

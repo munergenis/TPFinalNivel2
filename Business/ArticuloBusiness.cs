@@ -92,5 +92,24 @@ namespace Business
                 dataAccess.CloseConnection();
             }
         }
+
+        public void Eliminar(Articulo eliminado)
+        {
+            string queryString = $"DELETE FROM ARTICULOS WHERE Id = {eliminado.Id}";
+            dataAccess.SetQuery(queryString);
+
+            try
+            {
+                dataAccess.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                dataAccess.CloseConnection();
+            }
+        }
     }
 }
