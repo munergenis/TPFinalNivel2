@@ -32,7 +32,7 @@ namespace Views
         List<Articulo> lista = null;
         List<Articulo> listFiltrada = null;
         ArticuloBusiness articuloBusiness = new ArticuloBusiness();
-        Articulo seleccionado = null;
+        Articulo seleccionado = new Articulo();
 
         // Eventos
         private void Articulos_FormClosed(object sender, FormClosedEventArgs e)
@@ -410,11 +410,25 @@ namespace Views
         
         private void CargarLabels(Articulo articulo)
         {
+            if (seleccionado != null)
+            {
+                LblCategoria.Text = articulo.Categoria.Descripcion.ToUpper();
+                LblMarca.Text = articulo.Marca.Descripcion;
+                LblNombre.Text = articulo.Nombre;
+                LblDescripcion.Text = articulo.Descripcion;
+            }
+            else
+            {
+                LblCategoria.Text = "";
+                LblMarca.Text = "";
+                LblNombre.Text = "";
+                LblDescripcion.Text = "";
+            }
 
-            LblCategoria.Text = articulo.Categoria.Descripcion.ToUpper();
-            LblMarca.Text = articulo.Marca.Descripcion;
-            LblNombre.Text = articulo.Nombre;
-            LblDescripcion.Text = articulo.Descripcion;
+            //LblCategoria.Text = articulo.Categoria.Descripcion.ToUpper();
+            //LblMarca.Text = articulo.Marca.Descripcion;
+            //LblNombre.Text = articulo.Nombre;
+            //LblDescripcion.Text = articulo.Descripcion;
         }
 
         private void CargarLabels()
@@ -506,19 +520,43 @@ namespace Views
 
         private void CargarSeleccionado()
         {
-            if (DgvArticulos.CurrentRow != null) // DgvArticulos.SelectedRows.Count != 0 ||
+            if (DgvArticulos.SelectedRows.Count < 1)
             {
-                try
+                if (DgvArticulos.Rows.Count > 0)
                 {
+                    DgvArticulos.Rows[0].Selected = true;
                     seleccionado = (Articulo)DgvArticulos.CurrentRow.DataBoundItem;
                     CargarImagen(seleccionado.ImagenUrl);
                     CargarLabels(seleccionado);
                 }
-                catch
+                else
                 {
                     seleccionado = null;
+                    CargarImagen(string.Empty);
+                    CargarLabels(seleccionado);
+                    // En Cargar labels si seleccionado == null cargar vacio
                 }
             }
+            else
+            {
+                seleccionado = (Articulo)DgvArticulos.CurrentRow.DataBoundItem;
+                CargarImagen(seleccionado.ImagenUrl);
+                CargarLabels(seleccionado);
+            }
+
+            //if (DgvArticulos.CurrentRow != null) // DgvArticulos.SelectedRows.Count != 0 ||
+            //{
+            //    try
+            //    {
+            //        seleccionado = (Articulo)DgvArticulos.CurrentRow.DataBoundItem;
+            //        CargarImagen(seleccionado.ImagenUrl);
+            //        CargarLabels(seleccionado);
+            //    }
+            //    catch
+            //    {
+            //        seleccionado = null;
+            //    }
+            //}
         }
 
         private void TxtBusquedaAvanzada_Click(object sender, EventArgs e)
