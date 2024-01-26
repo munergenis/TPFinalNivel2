@@ -30,6 +30,7 @@ namespace Views
 
         // Objetos
         List<Articulo> lista = null;
+        List<Articulo> listFiltrada = null;
         ArticuloBusiness articuloBusiness = new ArticuloBusiness();
         Articulo seleccionado = null;
 
@@ -87,26 +88,36 @@ namespace Views
             ListarArticulos();
             CargarLabels();
             EsconderBusquedaAvanzada();
-            seleccionado = (Articulo)DgvArticulos.Rows[0].DataBoundItem;
+            if (lista != null)
+            {
+                seleccionado = (Articulo)DgvArticulos.Rows[0].DataBoundItem;
+            }
             CargarCbx();
         }
 
         private void DgvArticulos_SelectionChanged(object sender, EventArgs e)
         {
-            if (DgvArticulos.Rows.Count > 0 || expand == false)
-            {
-                try
-                {
-                    seleccionado = (Articulo)DgvArticulos.CurrentRow.DataBoundItem;
-                    CargarImagen(seleccionado.ImagenUrl);
-                    CargarLabels(seleccionado);
-                }
-                catch (Exception ex)
-                {
-                    seleccionado = null;
-                    //MessageBox.Show(ex.ToString());
-                }
-            }
+            CargarSeleccionado();
+            //else
+            //{
+            //    seleccionado = null;
+            //    //MessageBox.Show(ex.ToString());
+            //}
+           
+            //if (DgvArticulos.Rows.Count > 0 || expand == false)
+            //{
+            //    try
+            //    {
+            //        seleccionado = (Articulo)DgvArticulos.CurrentRow.DataBoundItem;
+            //        CargarImagen(seleccionado.ImagenUrl);
+            //        CargarLabels(seleccionado);
+            //    }
+            //    catch
+            //    {
+            //        seleccionado = null;
+            //        //MessageBox.Show(ex.ToString());
+            //    }
+            //}
         }
 
         private void BtnToogleBusquedaAvanzada_Click(object sender, EventArgs e)
@@ -184,6 +195,7 @@ namespace Views
             if (DgvArticulos.Rows.Count > 0)
             {
                 timer1.Start();
+                CargarSeleccionado();
                 CargarTextBox(seleccionado);
                 CbxCategoria.SelectedValue = seleccionado.Categoria.Id;
                 CbxMarca.SelectedValue = seleccionado.Marca.Id;
@@ -218,6 +230,7 @@ namespace Views
             }
             else
             {
+                CargarSeleccionado();
                 CargarNuevoModificar(seleccionado);
                 articuloBusiness.Modificar(seleccionado);
             }
@@ -227,21 +240,41 @@ namespace Views
 
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
-            // Mostrar warning
-            // Si devueve true
-                // articulobusines.eliminar(selec)
-                // listarArticulos
             Warning eliminar = new Warning();
             eliminar.WarningText = "¿Quieres eliminar? No se podrá recuperar el artículo!";
             eliminar.ShowDialog();
             if (eliminar.Return == true)
             {
+                CargarSeleccionado();
                 articuloBusiness.Eliminar(seleccionado);
                 ListarArticulos();
                 DgvArticulos.Focus();
+                TxtFiltroRapido.Text = "";
             }
         }
-       
+        
+        private void TxtFiltroRapido_TextChanged(object sender, EventArgs e)
+        {
+            //if (listFiltrada != null)
+            //    listFiltrada.Clear();
+
+            if (TxtFiltroRapido.Text != "")
+            {
+                listFiltrada = lista.FindAll(x => x.Nombre.ToLower().Contains(TxtFiltroRapido.Text.ToLower()) || x.Codigo.ToLower().Contains(TxtFiltroRapido.Text.ToLower()) || x.Marca.Descripcion.ToLower().Contains(TxtFiltroRapido.Text.ToLower()));
+            }
+            else
+            {
+                listFiltrada = lista;
+            }
+            DgvArticulos.DataSource = null;
+            DgvArticulos.DataSource = listFiltrada;
+            OcultarColumna("Id");
+            OcultarColumna("Descripcion");
+            OcultarColumna("ImagenUrl");
+            CargarSeleccionado();
+            CargarImagen(seleccionado.ImagenUrl);
+        }
+
         // Métodos
         private void ListarArticulos()
         {
@@ -251,12 +284,20 @@ namespace Views
             }
             DgvArticulos.DataSource = null;
             DgvArticulos.Update();
-            lista = articuloBusiness.ListarArticulos();
-            DgvArticulos.DataSource = lista;
-            OcultarColumna("Id");
-            OcultarColumna("Descripcion");
-            OcultarColumna("ImagenUrl");
-            CargarImagen(lista[0].ImagenUrl);
+
+            try
+            {
+                lista = articuloBusiness.ListarArticulos();
+                DgvArticulos.DataSource = lista;
+                OcultarColumna("Id");
+                OcultarColumna("Descripcion");
+                OcultarColumna("ImagenUrl");
+                CargarImagen(lista[0].ImagenUrl);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al conectar con base de datos" + ex.Message);
+            }
         }
 
         private void OcultarColumna(string header)
@@ -268,7 +309,10 @@ namespace Views
         {
             try
             {
-                PbxArticulo.Load(url);
+                if (seleccionado != null)
+                    PbxArticulo.Load(url);
+                else
+                    PbxArticulo.Image = Properties.Resources.techplaceholder;
             }
             catch (Exception)
             {
@@ -297,20 +341,30 @@ namespace Views
         }
 
         private void CargarLabels()
-        {
-            LblCategoria.Text = lista[0].Categoria.Descripcion.ToUpper();
-            LblMarca.Text = lista[0].Marca.Descripcion;
-            LblNombre.Text = lista[0].Nombre;
-            LblDescripcion.Text = lista[0].Descripcion;
+        { 
+            if (lista != null)
+            {
+                LblCategoria.Text = lista[0].Categoria.Descripcion.ToUpper();
+                LblMarca.Text = lista[0].Marca.Descripcion;
+                LblNombre.Text = lista[0].Nombre;
+                LblDescripcion.Text = lista[0].Descripcion;
+            }
         }
 
         private void CargarTextBox(Articulo seleccionado)
         {
-            TxtCodigo.Text = seleccionado.Codigo;
-            TxtNombre.Text = seleccionado.Nombre;
-            TxtPrecio.Text = seleccionado.Precio.ToString();
-            TxtUrlImagen.Text = seleccionado.ImagenUrl;
-            TxtDescripcion.Text = seleccionado.Descripcion;
+            if (seleccionado != null)
+            {
+                TxtCodigo.Text = seleccionado.Codigo;
+                TxtNombre.Text = seleccionado.Nombre;
+                TxtPrecio.Text = seleccionado.Precio.ToString();
+                TxtUrlImagen.Text = seleccionado.ImagenUrl;
+                TxtDescripcion.Text = seleccionado.Descripcion;
+            }
+            else
+            {
+                MessageBox.Show("Error al cargar seleccionado");
+            }
         }
 
         private void CargarTextBox()
@@ -324,16 +378,23 @@ namespace Views
 
         private void CargarCbx()
         {
-            CategoriaBusiness categoriaBusiness = new CategoriaBusiness();
-            MarcaBusiness marcaBusiness = new MarcaBusiness();
-            CbxCategoria.DataSource = categoriaBusiness.Listar();
-            CbxCategoria.ValueMember = "Id";
-            CbxCategoria.DisplayMember = "Descripcion";
-            CbxMarca.DataSource = marcaBusiness.Listar();
-            CbxMarca.ValueMember = "Id";
-            CbxMarca.DisplayMember = "Descripcion";
+            try
+            {
+                CategoriaBusiness categoriaBusiness = new CategoriaBusiness();
+                MarcaBusiness marcaBusiness = new MarcaBusiness();
+                CbxCategoria.DataSource = categoriaBusiness.Listar();
+                CbxCategoria.ValueMember = "Id";
+                CbxCategoria.DisplayMember = "Descripcion";
+                CbxMarca.DataSource = marcaBusiness.Listar();
+                CbxMarca.ValueMember = "Id";
+                CbxMarca.DisplayMember = "Descripcion";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al conectar con base de datos" + ex.Message);
+            }
         }
-
+        
         private void CargarNuevoModificar(Articulo articulo)
         {
             articulo.Codigo = TxtCodigo.Text;
@@ -349,10 +410,26 @@ namespace Views
         {
             timer1.Start();
             DgvArticulos.Focus();
-            seleccionado = (Articulo)DgvArticulos.CurrentRow.DataBoundItem;
+            CargarSeleccionado();
             CargarImagen(seleccionado.ImagenUrl);
             CargarLabels(seleccionado);
         }
 
+        private void CargarSeleccionado()
+        {
+            if (DgvArticulos.CurrentRow != null) // DgvArticulos.SelectedRows.Count != 0 ||
+            {
+                try
+                {
+                    seleccionado = (Articulo)DgvArticulos.CurrentRow.DataBoundItem;
+                    CargarImagen(seleccionado.ImagenUrl);
+                    CargarLabels(seleccionado);
+                }
+                catch
+                {
+                    seleccionado = null;
+                }
+            }
+        }
     }
 }

@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GrbPanel = new System.Windows.Forms.GroupBox();
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.BtnAceptar = new System.Windows.Forms.Button();
@@ -64,6 +64,7 @@
             this.LblMarca = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.LblCategoria = new System.Windows.Forms.Label();
+            this.PbxArticulo = new System.Windows.Forms.PictureBox();
             this.LblArticulos = new System.Windows.Forms.Label();
             this.DgvArticulos = new System.Windows.Forms.DataGridView();
             this.TxtFiltroRapido = new System.Windows.Forms.TextBox();
@@ -74,12 +75,11 @@
             this.LblTexto = new System.Windows.Forms.Label();
             this.LblCriterio = new System.Windows.Forms.Label();
             this.LblColumna = new System.Windows.Forms.Label();
+            this.BtnBusquedaAvanzada = new System.Windows.Forms.Button();
             this.TxtBusquedaAvanzada = new System.Windows.Forms.TextBox();
             this.CbxCriterioBusquedaAvanzada = new System.Windows.Forms.ComboBox();
             this.CbxColumnaBusquedaAvanzada = new System.Windows.Forms.ComboBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.PbxArticulo = new System.Windows.Forms.PictureBox();
-            this.BtnBusquedaAvanzada = new System.Windows.Forms.Button();
             this.BtnClose = new System.Windows.Forms.Button();
             this.BtnMinimizar = new System.Windows.Forms.Button();
             this.BtnAgregar = new System.Windows.Forms.Button();
@@ -94,10 +94,10 @@
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxArticulo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvArticulos)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PbxArticulo)).BeginInit();
             this.SuspendLayout();
             // 
             // GrbPanel
@@ -475,6 +475,15 @@
             this.LblCategoria.Text = "label1";
             this.LblCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // PbxArticulo
+            // 
+            this.PbxArticulo.Location = new System.Drawing.Point(34, 72);
+            this.PbxArticulo.Name = "PbxArticulo";
+            this.PbxArticulo.Size = new System.Drawing.Size(200, 200);
+            this.PbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PbxArticulo.TabIndex = 0;
+            this.PbxArticulo.TabStop = false;
+            // 
             // LblArticulos
             // 
             this.LblArticulos.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -499,23 +508,23 @@
             this.DgvArticulos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DgvArticulos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.DgvArticulos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Bisque;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Bisque;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowFrame;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvArticulos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Bisque;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Bisque;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowFrame;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvArticulos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Peru;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvArticulos.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Peru;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvArticulos.DefaultCellStyle = dataGridViewCellStyle2;
             this.DgvArticulos.EnableHeadersVisualStyles = false;
             this.DgvArticulos.GridColor = System.Drawing.Color.Salmon;
             this.DgvArticulos.Location = new System.Drawing.Point(292, 133);
@@ -540,6 +549,7 @@
             this.TxtFiltroRapido.Name = "TxtFiltroRapido";
             this.TxtFiltroRapido.Size = new System.Drawing.Size(553, 25);
             this.TxtFiltroRapido.TabIndex = 6;
+            this.TxtFiltroRapido.TextChanged += new System.EventHandler(this.TxtFiltroRapido_TextChanged);
             // 
             // panel4
             // 
@@ -619,6 +629,20 @@
             this.LblColumna.Text = "Columna";
             this.LblColumna.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // BtnBusquedaAvanzada
+            // 
+            this.BtnBusquedaAvanzada.BackColor = System.Drawing.Color.Peru;
+            this.BtnBusquedaAvanzada.BackgroundImage = global::Views.Properties.Resources.Buscar;
+            this.BtnBusquedaAvanzada.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.BtnBusquedaAvanzada.FlatAppearance.BorderSize = 0;
+            this.BtnBusquedaAvanzada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnBusquedaAvanzada.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.BtnBusquedaAvanzada.Location = new System.Drawing.Point(569, 1);
+            this.BtnBusquedaAvanzada.Name = "BtnBusquedaAvanzada";
+            this.BtnBusquedaAvanzada.Size = new System.Drawing.Size(23, 23);
+            this.BtnBusquedaAvanzada.TabIndex = 15;
+            this.BtnBusquedaAvanzada.UseVisualStyleBackColor = false;
+            // 
             // TxtBusquedaAvanzada
             // 
             this.TxtBusquedaAvanzada.BackColor = System.Drawing.Color.Ivory;
@@ -648,29 +672,6 @@
             // 
             this.timer1.Interval = 1;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // PbxArticulo
-            // 
-            this.PbxArticulo.Location = new System.Drawing.Point(34, 72);
-            this.PbxArticulo.Name = "PbxArticulo";
-            this.PbxArticulo.Size = new System.Drawing.Size(200, 200);
-            this.PbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PbxArticulo.TabIndex = 0;
-            this.PbxArticulo.TabStop = false;
-            // 
-            // BtnBusquedaAvanzada
-            // 
-            this.BtnBusquedaAvanzada.BackColor = System.Drawing.Color.Peru;
-            this.BtnBusquedaAvanzada.BackgroundImage = global::Views.Properties.Resources.Buscar;
-            this.BtnBusquedaAvanzada.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.BtnBusquedaAvanzada.FlatAppearance.BorderSize = 0;
-            this.BtnBusquedaAvanzada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnBusquedaAvanzada.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.BtnBusquedaAvanzada.Location = new System.Drawing.Point(569, 1);
-            this.BtnBusquedaAvanzada.Name = "BtnBusquedaAvanzada";
-            this.BtnBusquedaAvanzada.Size = new System.Drawing.Size(23, 23);
-            this.BtnBusquedaAvanzada.TabIndex = 15;
-            this.BtnBusquedaAvanzada.UseVisualStyleBackColor = false;
             // 
             // BtnClose
             // 
@@ -758,12 +759,12 @@
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PbxArticulo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvArticulos)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PbxArticulo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
