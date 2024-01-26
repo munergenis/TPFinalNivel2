@@ -131,6 +131,7 @@ namespace Views
                 LblTexto.Visible = true;
                 TxtBusquedaAvanzada.Visible = true;
                 BtnBusquedaAvanzada.Visible=true;
+                LblLimpiar.Visible = true;
             }
             else
             {
@@ -275,6 +276,42 @@ namespace Views
             CargarImagen(seleccionado.ImagenUrl);
         }
 
+        private void BtnBusquedaAvanzada_Click(object sender, EventArgs e)
+        {
+            if (TxtBusquedaAvanzada.Text != "Solo acepta números")
+            {
+                string columna = CbxColumnaBusquedaAvanzada.Text;
+                string criterio = CbxCriterioBusquedaAvanzada.Text;
+                string texto = TxtBusquedaAvanzada.Text;
+
+                if (TxtBusquedaAvanzada.Text != "")
+                {
+                    listFiltrada = articuloBusiness.FiltrarArticulos(columna, criterio, texto);
+                    DgvArticulos.DataSource = null;
+                    DgvArticulos.DataSource = listFiltrada;
+                }
+                else
+                {
+                    lista = articuloBusiness.ListarArticulos();
+                    DgvArticulos.DataSource = null;
+                    DgvArticulos.DataSource = lista;
+
+                    TxtBusquedaAvanzada.MaxLength = 50;
+                    TxtBusquedaAvanzada.Text = "Solo acepta números";
+                    TxtBusquedaAvanzada.ForeColor = SystemColors.AppWorkspace;
+                }
+            }
+        }
+
+        private void TxtBusquedaAvanzada_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+                e.Handled = true;
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+                e.Handled = true;
+        }
+
         // Métodos
         private void ListarArticulos()
         {
@@ -329,6 +366,7 @@ namespace Views
             LblTexto.Visible = false;
             TxtBusquedaAvanzada.Visible = false;
             BtnBusquedaAvanzada.Visible = false;
+            LblLimpiar.Visible = false;
         }
         
         private void CargarLabels(Articulo articulo)
@@ -349,6 +387,10 @@ namespace Views
                 LblNombre.Text = lista[0].Nombre;
                 LblDescripcion.Text = lista[0].Descripcion;
             }
+
+            TxtBusquedaAvanzada.MaxLength = 50;
+            TxtBusquedaAvanzada.Text = "Solo acepta números";
+            TxtBusquedaAvanzada.ForeColor = SystemColors.AppWorkspace;
         }
 
         private void CargarTextBox(Articulo seleccionado)
@@ -393,6 +435,14 @@ namespace Views
             {
                 MessageBox.Show("Error al conectar con base de datos" + ex.Message);
             }
+
+            CbxColumnaBusquedaAvanzada.Items.Add("Id");
+            CbxColumnaBusquedaAvanzada.Items.Add("Precio");
+            CbxColumnaBusquedaAvanzada.SelectedIndex = 0;
+
+            CbxCriterioBusquedaAvanzada.Items.Add("Mayor a");
+            CbxCriterioBusquedaAvanzada.Items.Add("Menor a");
+            CbxCriterioBusquedaAvanzada.SelectedIndex = 0;
         }
         
         private void CargarNuevoModificar(Articulo articulo)
@@ -429,6 +479,16 @@ namespace Views
                 {
                     seleccionado = null;
                 }
+            }
+        }
+
+        private void TxtBusquedaAvanzada_Click(object sender, EventArgs e)
+        {
+            if (TxtBusquedaAvanzada.Text == "Solo acepta números")
+            {
+                TxtBusquedaAvanzada.MaxLength = 9;
+                TxtBusquedaAvanzada.Text = "";
+                TxtBusquedaAvanzada.ForeColor = System.Drawing.Color.Black;
             }
         }
     }

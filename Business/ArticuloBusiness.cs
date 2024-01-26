@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ namespace Business
     {
         DataAccess dataAccess = new DataAccess();
         List<Articulo> lista = new List<Articulo>();
+        List<Articulo> listaFiltrada = new List<Articulo>();
         string queryString = string.Empty;
 
         public List<Articulo> ListarArticulos()
@@ -101,6 +103,53 @@ namespace Business
             try
             {
                 dataAccess.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                dataAccess.CloseConnection();
+            }
+        }
+
+        public List<Articulo> FiltrarArticulos(string columna, string criterio, string texto)
+        {
+            if (criterio == "Mayor a")
+                criterio = ">";
+            else
+                criterio = "<";
+
+            queryString = "SELECT A.Id, Codigo, Nombre, A.Descripcion, M.Id as IdMarca, M.Descripcion as Marca, C.Id as IdCategoria, C.Descripcion as Categoria, ImagenUrl, Precio FROM ARTICULOS A, CATEGORIAS C, MARCAS M WHERE A.IdMarca = M.Id AND A.IdCategoria = C.Id";
+            queryString += $" AND A.{columna} {criterio} {texto}";
+            dataAccess.SetQuery(queryString);
+
+            try
+            {
+                dataAccess.ExecuteQuery();
+                listaFiltrada.Clear();
+
+                while (dataAccess.Reader.Read())
+                {
+                    Articulo temp = new Articulo();
+                    temp.Id = (int)dataAccess.Reader["Id"];
+                    temp.Codigo = (string)dataAccess.Reader["Codigo"];
+                    temp.Nombre = (string)dataAccess.Reader["Nombre"];
+                    temp.Descripcion = (string)dataAccess.Reader["Descripcion"];
+                    temp.Marca = new Marca();
+                    temp.Marca.Id = (int)dataAccess.Reader["IdMarca"];
+                    temp.Marca.Descripcion = (string)dataAccess.Reader["Marca"];
+                    temp.Categoria = new Categoria();
+                    temp.Categoria.Id = (int)dataAccess.Reader["IdCategoria"];
+                    temp.Categoria.Descripcion = (string)dataAccess.Reader["Categoria"];
+                    if (!(dataAccess.Reader["ImagenUrl"] is DBNull))
+                        temp.ImagenUrl = (string)dataAccess.Reader["ImagenUrl"];
+                    temp.Precio = (decimal)dataAccess.Reader["Precio"];
+
+                    listaFiltrada.Add(temp);
+                }
+                return listaFiltrada;
             }
             catch (Exception ex)
             {

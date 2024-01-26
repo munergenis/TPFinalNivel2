@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GrbPanel = new System.Windows.Forms.GroupBox();
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.BtnAceptar = new System.Windows.Forms.Button();
@@ -83,6 +83,7 @@
             this.BtnClose = new System.Windows.Forms.Button();
             this.BtnMinimizar = new System.Windows.Forms.Button();
             this.BtnAgregar = new System.Windows.Forms.Button();
+            this.LblLimpiar = new System.Windows.Forms.Label();
             this.GrbPanel.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel11.SuspendLayout();
@@ -508,23 +509,23 @@
             this.DgvArticulos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DgvArticulos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.DgvArticulos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Bisque;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Bisque;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowFrame;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvArticulos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Bisque;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Bisque;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.WindowFrame;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvArticulos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.DgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Peru;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvArticulos.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Peru;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvArticulos.DefaultCellStyle = dataGridViewCellStyle6;
             this.DgvArticulos.EnableHeadersVisualStyles = false;
             this.DgvArticulos.GridColor = System.Drawing.Color.Salmon;
             this.DgvArticulos.Location = new System.Drawing.Point(292, 133);
@@ -590,6 +591,7 @@
             // panel5
             // 
             this.panel5.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.panel5.Controls.Add(this.LblLimpiar);
             this.panel5.Controls.Add(this.LblTexto);
             this.panel5.Controls.Add(this.LblCriterio);
             this.panel5.Controls.Add(this.LblColumna);
@@ -642,15 +644,19 @@
             this.BtnBusquedaAvanzada.Size = new System.Drawing.Size(23, 23);
             this.BtnBusquedaAvanzada.TabIndex = 15;
             this.BtnBusquedaAvanzada.UseVisualStyleBackColor = false;
+            this.BtnBusquedaAvanzada.Click += new System.EventHandler(this.BtnBusquedaAvanzada_Click);
             // 
             // TxtBusquedaAvanzada
             // 
             this.TxtBusquedaAvanzada.BackColor = System.Drawing.Color.Ivory;
             this.TxtBusquedaAvanzada.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxtBusquedaAvanzada.Location = new System.Drawing.Point(326, 1);
+            this.TxtBusquedaAvanzada.MaxLength = 9;
             this.TxtBusquedaAvanzada.Name = "TxtBusquedaAvanzada";
             this.TxtBusquedaAvanzada.Size = new System.Drawing.Size(266, 23);
             this.TxtBusquedaAvanzada.TabIndex = 2;
+            this.TxtBusquedaAvanzada.Click += new System.EventHandler(this.TxtBusquedaAvanzada_Click);
+            this.TxtBusquedaAvanzada.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBusquedaAvanzada_KeyPress);
             // 
             // CbxCriterioBusquedaAvanzada
             // 
@@ -713,6 +719,16 @@
             this.BtnAgregar.TabIndex = 5;
             this.BtnAgregar.UseVisualStyleBackColor = false;
             this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
+            // 
+            // LblLimpiar
+            // 
+            this.LblLimpiar.AutoSize = true;
+            this.LblLimpiar.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.LblLimpiar.Location = new System.Drawing.Point(324, 27);
+            this.LblLimpiar.Name = "LblLimpiar";
+            this.LblLimpiar.Size = new System.Drawing.Size(202, 18);
+            this.LblLimpiar.TabIndex = 19;
+            this.LblLimpiar.Text = "*Busqueda en blanco para limpiar";
             // 
             // Articulos
             // 
@@ -824,5 +840,6 @@
         private System.Windows.Forms.Label LblEditDescripcion;
         private System.Windows.Forms.Button BtnCancelar;
         private System.Windows.Forms.Button BtnAceptar;
+        private System.Windows.Forms.Label LblLimpiar;
     }
 }
